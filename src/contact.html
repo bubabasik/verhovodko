@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('_meta.html')
+
+</head>
+<body>
+	<div class="cont__outer">
+		@@include('_header.html')
+
+		<section class="section_cont">
+			<div class="cont__map">
+				<div id="cont-map-0" class="cont__map_item active"></div>
+				<div id="cont-map-1" class="cont__map_item"></div>
+				<div id="cont-map-2" class="cont__map_item"></div>
+			</div>
+			<div class="container">
+				<ul class="bread__list list-hor">
+					<li>
+						<a href="./index.html" class="link">Главная</a>
+						<svg class="ico"><use xlink:href="./img/sprite.svg#bread-left" /></svg>
+					</li>
+				</ul>
+				<div class="content__title title title-xl">
+					<h1>Контакты</h1>
+				</div>
+
+				<div class="cont__cont">
+					<ul class="cont__tabs list-hor">
+						<li><a href="#contact-0" class="cont__tab link active">Минск</a></li>
+						<li><a href="#contact-1" class="cont__tab link">Москва</a></li>
+					</ul>
+					<div class="cont__content">
+
+						<div id="contact-0" class="cont__pane active" data-id="0">
+							<div class="cont__address">
+								Республика Беларусь, 220012,  <br>
+								г. Минск, пр. Независимости, 76Б
+							</div>
+							<ul class="list-vert cont__info">
+								<li><a href="tel:+375172907580" class="link">+375 (17) 290-75-80</a></li>
+								<li><a href="tel:+375172907580" class="link">+375 (17) 290-75-80</a></li>
+								<li><a href="mailto:minsk@verkhovodko.com" class="link link_u">minsk@verkhovodko.com</a></li>
+							</ul>
+						</div>
+
+
+						<div id="contact-1" class="cont__pane" data-id="1">
+							<div class="cont__address">
+								Россия, 127018, г. Москва, ул. Сущевский вал, 5, стр.2, офис 212
+							</div>
+							<ul class="list-vert cont__info">
+								<li><a href="tel:+74957908285" class="link">+7 (495) 790-82-85</a></li>
+								<li><a href="tel:+74999730193" class="link">+7 (499) 973-01-93</a></li>
+								<li><a href="mailto:moskow@verkhovodko.com" class="link link_u">moskow@verkhovodko.com</a></li>
+							</ul>
+						</div>
+
+
+						<div class="cont__btn">
+							<button class="cont__show btn btn-more">
+								<span class="cont__show_text">
+									открыть карту
+									<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+								</span>
+								<span class="cont__show_icon">
+									<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#close" /></svg>
+								</span>
+							</a>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</section>	
+	</div>
+
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+	<script>
+		$(function(){
+
+			$('.cont__cont').easytabs({
+				animationSpeed: 500,
+				tabs: "> .cont__tabs > li",
+				transitionInEasing: 'linear',
+				transitionOutEasing: 'linear',
+				transitionCollapseEasing: 'linear',
+				transitionUncollapseEasing: 'linear',
+				updateHash: false
+			}).bind('easytabs:before', function(id, val, target) {
+				var 
+				$to = parseInt($(target).attr('data-id')),
+				$from = parseInt($('.cont__pane.active').attr('data-id'));
+
+				$class = $to > $from ? 'from-right' :	'from-left';
+ 	
+ 				$('.cont__map').removeClass('from-left from-right').addClass($class);
+ 				$('.cont__map_item').removeClass('from to active');
+				$('#cont-map-' + $to).addClass('active to');
+				$('#cont-map-' + $from).addClass('from');
+
+				/*var 
+				$tab = $('#check-delivery a.active'),
+				$delivery = $tab.attr('data-id');
+				$('input[name="shipping_method"]').val($delivery + '.' + $delivery);
+				updateShipping();*/
+			});
+
+			ymaps.ready(function () {
+				var 
+				position,
+				h = $(window).outerHeight(),
+				w = $(window).outerWidth();
+				maps = [],
+				place = [],
+				coords = [];
+
+				coords[0] = [53.921812, 27.604672]
+				maps[0] = new ymaps.Map('cont-map-0', {
+					center: coords[0],
+					zoom: 17,
+					controls: ['zoomControl']
+				}, {
+					searchControlProvider: 'yandex#search'
+				});
+
+				coords[1] = [55.793065, 37.591692]
+				maps[1] = new ymaps.Map('cont-map-1', {
+					center: coords[1],
+					zoom: 17,
+					controls: ['zoomControl']
+				}, {
+					searchControlProvider: 'yandex#search'
+				});
+
+
+				/*place[0] = new ymaps.Placemark(maps[0].getCenter(), {}, {
+					iconLayout: 'default#image',
+					iconImageHref: './img/label.svg',
+					iconImageSize: [35, 47],
+					iconImageOffset: [-17.5, -47]
+				});
+				maps[0].geoObjects.add(place[0]);*/
+
+				changeMapPos();
+
+				$(window).on('resize', changeMapPos);
+
+
+
+				function changeMapPos() {
+					var
+					$cont = $('.cont__map'),
+					h = $cont.outerHeight(),
+					w = $cont.outerWidth(),
+					x = w * 0.25,
+					y = h * 0.14;
+
+					$cont.css({'--x' : x ,'--y' : y });
+
+					$.each(maps, function(key, item) {
+						maps[key].setCenter(coords[key]);
+						position = maps[key].getGlobalPixelCenter();
+						maps[key].setGlobalPixelCenter([ position[0] - x, position[1] - y ]);
+					})
+
+					
+					
+				}
+				
+			});
+
+		})
+	</script>
+
+	@@include('_footer.html')
+
+</body>
+</html>

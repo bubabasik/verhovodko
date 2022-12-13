@@ -1,0 +1,152 @@
+.section_about{
+	padding-bottom: v(60);
+	@include media-max($w-md) {
+		.title{
+			font-size: v(26);
+		}
+	}
+	@include media($w-lg) {
+		padding-top: v(25);
+		padding-bottom: v(80);
+	}
+	@include media($w-xl) {
+		margin-top: v(-24);
+		padding-bottom: v(118);
+		
+		.content__title{
+			max-width: v(1410);
+		}
+	}
+}
+.about__bg{
+	z-index: -1;
+	text-align: center;
+	margin-top: -13px;
+	margin-right: -20px;
+
+	@include media($w-md) {
+		position: absolute;
+		top: v(-25);
+		left: calc(-1 * var(--half-padding));
+		right: calc(-1 * var(--half-padding));
+		margin: 0;
+	}
+}
+.about__sub{
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: $text_gray;
+	line-height: 1.35;
+	font-size: v(13);
+	margin-bottom: v(7);
+
+	@include media($w-lg) {
+		font-size: v(16);
+		margin-bottom: v(11);
+	}
+	@include media($w-xl) {
+		font-size: v(20);
+	}
+}
+.about__cont{
+
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	margin-top: v(20);
+
+	@include media($w-md) {
+		flex-flow: row;
+		margin-top: v(50);
+		padding: 0 v(80) 0 v(40);
+	}
+	@include media($w-lg) {
+		margin-top: v(80);
+		padding: 0 v(120) 0 v(80);
+	}
+	@include media($w-xl) {
+		margin-top: v(120);
+		padding: 0 v(159) 0 v(144);
+	}
+}
+.about__num{
+	&_cifr{
+		font-family: $font_title;
+		line-height: 1;
+		display: inline-flex;
+		align-items: center;
+		font-size: v(125);
+		span{
+			font-family: $font;
+			letter-spacing: -0.02em;
+			font-weight: 200;
+			font-size: v(100);
+		}
+	}
+	&_text{
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: $text_gray;
+		line-height: 1.35;
+		font-size: v(13);
+		margin-top: v(8);
+	}
+
+	@include media($w-md) {
+		flex: 0 0 v(240);
+		max-width: v(240);
+		&_cifr{
+			font-size: v(140);
+			span{
+				font-size: v(100);
+			}
+		}
+	}
+	@include media($w-lg) {
+		flex: 0 0 v(400);
+		max-width: v(400);
+		&_cifr{
+			font-size: v(200);
+			span{
+				font-size: v(170);
+			}
+		}
+		&_text{
+			font-size: v(16);
+		}
+	}
+	@include media($w-xl) {
+		&_cifr{
+			font-size: v(240);
+			span{
+				font-size: v(200);
+				margin-top: v(10);
+			}
+		}
+		&_text{
+			font-size: v(20);
+			margin: v(12) 0 0 v(15);
+		}
+	}
+}
+.about__text{
+	margin-top: v(40);
+
+	@include media($w-md) {
+		margin-top: 0;
+	}
+	@include media($w-md) {
+		flex: 0 0 v(260);
+		max-width: v(260);
+	}
+	@include media($w-lg) {
+		flex: 0 0 v(400);
+		max-width: v(400);
+	}
+	@include media($w-xl) {
+		--text-margin: calc(30 * var(--fz));
+		flex: 0 0 v(520);
+		max-width: v(520);
+		padding-top: v(29);
+	}
+}

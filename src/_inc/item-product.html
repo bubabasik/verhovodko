@@ -1,0 +1,127 @@
+<div class="pr__item 
+@@if (filter.new === true) { pr__item-new }
+@@if (filter.veg === true) { pr__item-veg }
+@@if (filter.hot === true) { pr__item-hot }
+@@if (filter.hit === true) { pr__item-hit }
+@@if (filter.child === true) { pr__item-child } 
+">
+<div class="pr__img">
+	<img src="./images/products/@@image" alt="">
+	<div class="pr__filters">
+
+		@@if (filter.new === true) { 
+		<span class="pr__filter pr__filter-new">
+			<span class="pr__filter-in">
+				<svg class="ico"><use xlink:href="#filter-new" /></svg>
+				<span class="pr__filter-name">Новинки</span>
+			</span>
+		</span>	}
+		
+		@@if (filter.veg === true) { 
+		<span class="pr__filter pr__filter-veg">
+			<span class="pr__filter-in">
+				<svg class="ico"><use xlink:href="#filter-veg" /></svg>
+				<span class="pr__filter-name">Вегетарианское</span>
+			</span>
+		</span>	}
+		
+		@@if (filter.hot === true) { 
+		<span class="pr__filter pr__filter-hot">
+			<span class="pr__filter-in">
+				<svg class="ico"><use xlink:href="#filter-hot" /></svg>
+				<span class="pr__filter-name">Острое</span>
+			</span>
+		</span>	}
+		
+		@@if (filter.hit === true) { 
+		<span class="pr__filter pr__filter-hit">
+			<span class="pr__filter-in">
+				<svg class="ico"><use xlink:href="#filter-hit" /></svg>
+				<span class="pr__filter-name">Хиты</span>
+			</span>
+		</span>	}
+		
+		@@if (filter.child === true) { 
+		<span class="pr__filter pr__filter-child">
+			<span class="pr__filter-in">
+				<svg class="ico"><use xlink:href="#filter-child" /></svg>
+				<span class="pr__filter-name">Детское</span>
+			</span>
+		</span>	}
+
+	</div>
+
+	@@if (info === true) {	
+	<div class="pr__info">
+		<span class="pr__info-icon">i</span>
+		<div class="pr__info-in">
+			Дополнительная информация о блюде если это необходимо.
+			Например Б/Ж/У или состав сета
+		</div>
+	</div> }
+
+</div>
+
+<div class="pr__data">
+	<div class="pr__name">@@name</div>
+	<div class="pr__descr">@@descr</div>
+</div>
+@@if (option.size === true || option.found === true) {	
+<div class="pr__options">
+
+	@@if (option.size === true) {	
+	<div class="pr__option">
+		<label class="pr__option-item">
+			<input type="radio" name="product[@@id][OPTION_ID-1]" value="Стандартная 30см" data-price="0" data-weight="0" checked>
+			<span>Стандартная 30см</span>
+		</label>
+		<label class="pr__option-item">
+			<input type="radio" name="product[@@id][OPTION_ID-1]" value="Мини 26см" data-price="-100" data-weight="-80" >
+			<span>Мини 26см</span>
+		</label>
+	</div> }
+
+	@@if (option.found === true) {	
+	<div class="pr__option">
+		<div class="pr__select drop__item">
+			<div class="pr__select-name drop__btn">
+				<span>Томатная основа</span>
+				<svg class="ico"><use xlink:href="#arr-down" /></svg>
+			</div>
+			<div class="pr__select-list drop__list">
+				<label class="pr__select-item active" data-val="Томатная основа">
+					<input type="radio" name="product[@@id][OPTION_ID-2]" value="Томатная основа" data-price="0" data-weight="0" checked>
+					<span>Томатная основа</span>
+				</label>
+				<label class="pr__select-item" data-val="Сливочная основа">
+					<input type="radio" name="product[@@id][OPTION_ID-2]" value="Сливочная основа" data-price="+50" data-weight="0" >
+					<span>Сливочная основа</span>
+				</label>
+			</div>
+		</div>
+	</div> }
+
+</div>
+}
+<div class="pr__bottom">
+	<div class="pr__bottom-data">
+		<div class="pr__price" data-price="@@price"><span>@@price</span> руб.</div>
+		<div class="pr__weight" data-weight="@@weight"><span>@@weight</span> гр.</div>
+	</div>
+	<div class="pr__bottom-btn">
+		<button class="pr__add btn btn-add" type="button">
+			<svg class="ico"><use xlink:href="#plus" /></svg>
+			В корзину
+		</button>
+		<div class="pr__qty qty__cont">
+			<button type="button" class="qty-btn qty-minus">
+				<svg class="ico ico-center"><use xlink:href="#minus" /></svg>
+			</button>
+			<input type="text" name="pr__num" value="0" class="qty-input" readonly />
+			<button type="button" class="qty-btn qty-plus">
+				<svg class="ico ico-center"><use xlink:href="#plus" /></svg>
+			</button>
+		</div>
+	</div>
+</div>
+</div>

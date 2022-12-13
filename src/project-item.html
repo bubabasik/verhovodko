@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('_meta.html')
+
+</head>
+<body>
+
+	@@include('_header.html')
+
+	<section class="section_project">
+		<div class="container">
+			<ul class="bread__list list-hor">
+				<li>
+					<a href="./project-list.html" class="link">Проекты</a>
+					<svg class="ico"><use xlink:href="./img/sprite.svg#bread-left" /></svg>
+				</li>
+			</ul>
+			<div class="content__title title title-xl">
+				<h1>Защита интересов Microsoft в&nbsp;суде Калифорнии</h1>
+			</div>
+			<div class="project__cont content__row row">
+				<div class="content__aside col-12 col-lg-4 order-lg-2">
+					<div class="project__info">
+
+						<div class="project__info_item">
+							<div class="project__info_label">клиент</div>
+							<div class="project__info_text">Microsoft Corporation</div>
+						</div>
+
+						<div class="project__info_item">
+							<div class="project__info_label">Период работы</div>
+							<div class="project__info_text">Май 2019 - настоящее время</div>
+						</div>
+
+						<div class="project__info_item">
+							<div class="project__info_label">Описание</div>
+							<div class="project__info_text">
+								<p>Проведение юридического аудита</p>
+								<p>Защита объектов интеллектуальной собственности</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="content__data col-12 col-lg-8 order-lg-1">
+					<div class="project__text text clearfix">
+						<p>Команда сопроводила сделку по привлечению инвестиций от инвестиционного фонда Zubr Capital Fund в Realt.by – популярный информационно-аналитический ресурс в сфере недвижимости.</p>
+						<p>Также в ходе проекта мы проконсультировали клиента по вопросам структуры сделки и ее юридического оформления.</p>
+						<p>Юридическая фирма «Верховодко и партнеры» оказывает широкий комплекс услуг в области оформления прав на интеллектуальную собственность, разработки проектов различных договоров, предоставляет комплексные консультации по этим вопросам и осуществляет защиту прав правообладателей.</p>
+						<blockquote>
+							“Это сплоченная команда опытных профессионалов, которые способны справиться даже с самыми крупными проектами.”
+							<span>Антон Мякишев, Microsoft Corporation</span>
+						</blockquote>
+					</div>
+					<div class="project__share">
+						<img src="./img/share.png" alt="">
+						<span>поделиться проектом</span>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>	
+
+	@@include('_section-consult.html', {"title" : "Получить консультацию"})
+	@@include('_footer.html')
+
+</body>
+</html>

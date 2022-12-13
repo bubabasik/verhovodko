@@ -1,0 +1,130 @@
+.realized__cont{
+
+}
+.realized__title{
+	text-transform: uppercase;
+	color: $text_gray;
+	letter-spacing: 0.1em;
+	line-height: 1.35;
+	font-size: v(13);
+	margin-bottom: v(20);
+
+	@include media($w-lg) {
+		font-size: v(18);
+	}
+	@include media($w-xl) {
+		font-size: v(20);
+		margin-bottom: v(28);
+	}
+}
+.realized__outer{
+	border-top: 1px solid $line_gray_soft;
+
+	&:last-child{
+		border-bottom: 1px solid $line_gray_soft;
+	}
+
+	@include media($w-xl) {
+
+	}
+}
+.realized__btn{
+	border-top: 1px solid $line_gray_soft;
+
+	@include media-max($w-lg) {
+		display: none;
+	}
+	@include media($w-lg) {
+		padding-top: v(28);
+	}
+}
+.realized__item{
+	line-height: 1.35;
+	position: relative;
+	display: inline-flex;
+	width: 100%;
+	flex-flow: column;
+	text-decoration: none !important;
+	padding: v(20) 0;
+
+	&:hover{
+		.realized__name{
+			color: $text_purple;
+		}
+		.realized__more{
+			transform: none;
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	@include media($w-lg) {
+		padding: v(30) 0;
+		letter-spacing: 0;
+	}
+}
+.realized__name{
+	font-size: v(20);
+	color: #000;
+	transition: .3s ease-in-out;
+	letter-spacing: -0.02em;
+
+	@include media($w-lg) {
+		font-size: v(22);
+	}
+	@include media($w-xl) {
+		font-size: v(26);
+	}
+}
+.realized__text{
+	font-size: v(16);
+	color: $text_gray;
+	margin-top: v(10);
+	position: relative;
+
+	@include media($w-lg) {
+		font-size: v(20);
+	}
+	@include media($w-xl) {
+		font-size: v(26);
+	}
+}
+.realized__more{
+	position: absolute;
+	width: v(36);
+	height: v(36);
+	border-radius: 50%;
+	background: $purple;
+	transition: .3s ease-in-out;
+	right: v(-18);
+	bottom: v(9);
+	transform: scale(1);
+
+	svg{
+		fill: #fff;
+		width: v(16);
+		height: v(13);
+	}
+
+	@include media-max($w-lg) {
+		display: none;
+	}
+	@include media($w-lg) {
+		transform: scale(0);
+		opacity: 0;
+		visibility: hidden;
+		width: v(45);
+		height: v(45);
+		bottom: v(21);
+		right: v(-20);
+	}
+	@include media($w-xl) {
+		width: v(60);
+		height: v(60);
+		right: v(-30);
+		svg{
+			width: v(22);
+			height: v(20);
+		}
+	}
+}

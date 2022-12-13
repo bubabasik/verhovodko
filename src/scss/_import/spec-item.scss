@@ -1,0 +1,28 @@
+.section_special{
+	padding-bottom: v(101);
+	@include media($w-lg) {
+		padding-bottom: v(140);
+	}
+	@include media($w-xl) {
+		padding-bottom: v(200);
+	}
+}
+.special__cont{
+	.content__aside{
+		margin-top: v(61);
+	}
+	@include media-max($w-lg) {
+		margin-top: 0;
+	}
+	@include media($w-xl) {
+		margin-top: v(83);
+		justify-content: space-between;
+		.content__aside{
+			margin-top: 0;
+			padding-top: v(5);
+		}
+	}
+}
+.special__text{
+
+}

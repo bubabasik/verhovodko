@@ -1,0 +1,84 @@
+.section_news{
+	padding-bottom: v(100);
+	@include media($w-xl) {
+		padding-bottom: v(200);
+	}
+}
+.news__cont{
+	margin-top: v(40);
+	.pagination{
+		margin-top: 0;
+	}
+	@include media($w-md) {
+		.pagination{
+			margin-top: v(30);
+		}
+	}
+	@include media($w-lg) {
+		margin-left: v(-10);
+		margin-right: v(-10);
+	}
+	@include media($w-xl) {
+		margin: v(79) v(-15) 0;
+		.pagination{
+			margin-top: v(-17);
+		}
+	}
+}
+.news__outer{
+	margin-bottom: v(40);
+
+	@include media($w-lg) {
+		margin-bottom: v(70);
+		padding: 0 v(10);
+	}
+	@include media($w-xl) {
+		margin-bottom: v(100);
+		padding: 0 v(15);
+	}
+}
+.news__item{
+	line-height: 1.35;
+	text-decoration: none !important;
+	color: #000;
+	display: flex;
+	flex-flow: column;
+
+	&:hover{
+		color: $text_purple;
+	}
+}
+.news__img{
+	font-size: 0;
+	img{
+		width: 100%;
+	}
+}
+.news__date{
+	font-size: v(13);
+	letter-spacing: 0.1em;
+	color: $text_gray;
+	text-transform: uppercase;
+	margin-top: v(10);
+
+	@include media($w-lg) {
+		margin-top: v(15);
+		font-size: v(16);
+	}
+	@include media($w-xl) {
+		margin-top: v(20);
+		font-size: v(20);
+	}
+}
+.news__title{
+	margin-top: v(5);
+	font-size: v(16);
+
+	@include media($w-lg) {
+		font-size: v(18);
+	}
+	@include media($w-xl) {
+		margin-top: v(10);
+		font-size: v(26);
+	}
+}

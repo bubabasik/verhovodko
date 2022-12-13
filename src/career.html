@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('_meta.html')
+
+</head>
+<body>
+
+	@@include('_header.html')
+
+	<section class="section_career">
+		<div class="container">
+			<ul class="bread__list list-hor">
+				<li>
+					<a href="./index.html" class="link">Главная</a>
+					<svg class="ico"><use xlink:href="./img/sprite.svg#bread-left" /></svg>
+				</li>
+			</ul>
+			<div class="content__title title title-xl">
+				<h1>Карьера</h1>
+			</div>
+
+			<div class="career__cont row content__row">
+				<div class="content__data career__text col-12 col-lg-8 ">
+					<div class="text">
+						<h3>Мы соединяем таланты с возможностями.</h3>
+						<p>Здесь, в Sorainen, вы будете неотъемлемой частью большой международной команды. И хотя работа, которую вы будете выполнять, не будет самой легкой, вы, безусловно, будете получать от нее удовольствие, осознавая значимость, ценность, и влияние результатов вашей работы на рынок. Звучит интересно? Считаете себя бизнес-ориентированным профессионалом и стремитесь к совершенству через непрерывное развитие и изучение нового? Тогда мы будем рады видеть вас в нашей команде!</p>
+						<h3>Что ценят наши сотрудники:</h3>
+						<ul>
+							<li>Ментор для каждого нового сотрудника – 80 лучших умов помогают с интеграцией новых талантов и поддерживают в развитии</li>
+							<li>Передовые ИТ-системы с использованием технологий ИИ</li>
+							<li>Дружелюбные коллеги, всегда открытые для разговора, даже в самое загруженное время</li>
+							<li>Помощь в оплате занятий спортом по вашему выбору</li>
+							<li>Академический отпуск для сдачи адвокатских экзаменов</li>
+						</ul>
+						<p>Здесь, в Sorainen, вы будете неотъемлемой частью большой международной команды.</p>
+					</div>
+					<div class="career__btn">
+						<a href="#modal_bid" class="btn btn-more modalshow">
+							отправить резюме
+							<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+						</a>
+					</div>
+				</div>
+				<div class="content__aside career__aside col-12 col-lg-4">
+					<img src="./images/career.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="career__info">
+				<div class="title">
+					Что мы предлагаем:
+				</div>
+				<div class=" textinfo__cont">
+
+					<div class="textinfo__item">
+						<div class="textinfo__name">актуальные какансии</div>
+						<div class="textinfo__text text text-sm">
+							<p>Маркетолог</p>
+							<p>Юрист</p>
+							<p>Ассистент руководителя</p>
+						</div>
+					</div>
+
+					<div class="textinfo__item">
+						<div class="textinfo__name">условия</div>
+						<div class="textinfo__text text text-sm">
+							<h4>Ваши навыки:</h4>
+							<p>Ваш опыт работы не менее 2 лет в сфере интеллектуальной собственности, ВЭД и валютного законодательства, в области гражданского и налогового права</p>
+							<p>У вас хорошие навыки подготовки договоров и заключений</p>
+							<p>Вы знаете английский не ниже уровня upper intermediate (включая владение юридической лексикой)</p>
+							<h4>Наши условия:</h4>
+							<p>Современный, комфортабельный офис в центре Минска</p>
+							<p>Высокий уровень оплаты труда</p>
+							<p>Четкие карьерные перспективы</p>
+							<h4>Ваши перспективы:</h4>
+							<p>Работа с мировыми брендами: Vizor, BelPrime, SDevs, First Development Hub, Game Insight, MSQRD, Юрий Гурский, Flo, Workfusion, Juno</p>
+							<p>Наши юристы – постоянные спикеры семинаров и форумов.</p>
+						</div>
+					</div>
+
+					<div class="textinfo__item">
+						<div class="textinfo__name">стажировка</div>
+						<div class="textinfo__text text text-sm">
+							<p>Стажировка в Sorainen – это как интенсивная тренировка. По крайней мере так говорят наши стажеры. Вам не придется много сидеть – вы будете вовлечены в крупные клиентские проекты самым настоящим образом.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+		</div>
+	</section>	
+
+	@@include('_section-consult.html', {"title" : "Написать HR-команде"})
+	@@include('_footer.html')
+
+</body>
+</html>

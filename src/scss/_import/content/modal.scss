@@ -1,0 +1,266 @@
+
+.fancybox-bg{
+	background: #000!important;
+	opacity: 0!important;
+	transition: .4s ease-out!important;
+}
+.fancybox-is-open {
+	.fancybox-bg{
+		opacity: .10!important;
+	}
+}
+.fancy-from-right,
+.fancy-from-top{
+	.fancybox-slide{
+		padding: 0 !important;
+		overflow-x: hidden;
+	}
+}
+.fancy-from-top{
+	.modal__cont{
+		transform: translateY(-120%);
+		&.active{
+			transform: none;
+		}
+	}
+}
+.fancy-mmenu{
+	.fancybox-bg{
+		visibility: hidden !important;
+	}
+}
+
+.fancybox-slide--html{
+	padding: 0 !important;
+}
+
+.modal__cont{
+	float: right;
+	min-height: 100vh;
+	transform: translateX(100%);
+	transition: .4s ease-out;
+	opacity: 1!important;
+	width: 100%;
+	background: $back;
+	padding: v(97) v(40);
+
+	&-dark{
+		background: $black;
+		color: #fff;
+		.modal__close{
+			color: #fff;
+			&:before{
+				background: rgba(255, 255, 255, 0.1);
+			}
+		}
+		.modal__address{
+			color: rgba(255, 255, 255, 0.6);
+			a{
+				color: #fff!important;
+			}
+		}
+	}
+
+	.fancybox-button{
+		display: none;
+	}
+	
+	&.active{
+		transform: none;
+	}
+
+	@include media($w-md) {
+		max-width: v(450);
+		padding: v(100) v(80);
+	}
+	@include media($w-lg) {
+		max-width: v(650);
+		padding: v(100) v(120);
+	}
+	@include media($w-xl) {
+		max-width: v(840);
+		padding: v(115) v(160);
+	}
+
+}
+.modal__close{
+	@extend %btn_;
+	@extend %btn-scale_;
+	position: absolute;
+	
+	min-height: 0;
+	width: v(36);
+	height: v(36);
+	top: v(22);
+	right: v(20);
+	z-index: 99;
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: $line_gray;
+	border-radius: 50%;
+
+	&:before{
+		background: #fff;
+		border-radius: inherit;
+	}
+	&:after{
+		background: $purple;
+		border-radius: inherit;
+	}
+
+	svg{
+		fill: currentColor;
+		width: v(12);
+		height: v(12);
+	}
+
+	&:hover{
+		color: #fff;
+	}
+
+	@include media($w-xl) {
+		width: v(80);
+		height: v(80);
+		top: v(40);
+		right: v(57);
+		svg{
+			width: v(26);
+			height: v(26);
+		}
+	}
+
+}
+.modal__title{
+	font-size: v(28);
+	line-height: 1.35;
+	font-family: $font_title;
+	margin-bottom: v(20);
+
+	@include media($w-xl) {
+		font-size: v(46);
+		margin-bottom: v(45);
+	}
+}
+
+.modal__address{
+	color: $text_gray;
+	letter-spacing: 0.1em;
+	line-height: 1.35;
+	font-size: v(14);
+	display: flex;
+	flex-wrap: wrap;
+	margin: v(60) v(-10) 0;
+
+	&_item{
+		display: flex;
+		flex-flow: column;
+		align-items: flex-start;
+		padding: 0 v(10);
+		margin-bottom: v(20);
+		flex: 0 0 50%;
+		max-width: 50%;
+		span{
+			text-transform: uppercase;
+		}
+		a{
+			color: #000!important;
+			margin-top: v(5);
+			letter-spacing: 0;
+		}
+	}
+	@include media($w-lg) {
+		font-size: v(16);
+		margin-top: v(70);
+		margin-right: v(-30);
+	}
+	@include media($w-xl) {
+		font-size: v(20);
+		margin-top: v(94);
+		&_item{
+			a{
+				margin-top: v(10);
+			}
+		}
+	}
+}
+
+.search{
+	&__modal{
+		max-width: 100%;
+		min-height: 0;
+		background: #fff;
+	}
+	&__form{}
+	&__inp{
+		display: flex;
+		align-items: flex-start;
+	}
+	&__input{
+		font-family: $font_title;
+		flex: auto;
+		border: none;
+		border-bottom: 1px solid $line_gray_soft;
+		background: transparent;
+		color: #000;
+		font-size: v(28);
+
+		@include placeholder {
+			font-family: $font_title;
+			color: #000;
+		}
+	}
+	&__submit{
+		padding: 0;
+		color: $line_gray_dark;
+		min-width: v(36);
+		&:hover{
+			color: #fff;
+		}
+		svg{
+			fill: currentColor;
+			width: v(16);
+			height: v(13);
+		}
+	}
+	&__sub{
+		color: $text_gray;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		line-height: 1.35;
+	}
+
+	@include media($w-xl) {
+		&__modal{
+			padding-top: v(99);
+			padding-bottom: v(102);
+			.container{
+				max-width: v(1310);
+			}
+			&__form{
+				width: 100%;
+				max-width: v(1010);
+				float: right;
+			}
+		}
+		&__input{
+			height: v(83);
+			padding-bottom: v(31);
+			font-size: v(46);
+			margin-top: v(9);
+		}
+		&__sub{
+			font-size: v(20);
+			margin-top: v(20);
+		}
+		&__submit{
+			margin-left: v(50);
+			min-width: v(80);
+			svg{
+				width: v(22);
+				height: v(19);
+			}
+		}
+	}
+}

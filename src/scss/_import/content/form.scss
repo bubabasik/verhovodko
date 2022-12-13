@@ -1,0 +1,151 @@
+.form{
+
+}
+.form__row{
+	margin: 0 v(-5);
+}
+.form__outer{
+	padding: 0 v(5);
+}
+.form__inp{
+	position: relative;
+	margin-bottom: v(10);
+	background: #fff;
+
+	@include media($w-xl) {
+		margin-bottom: v(10);
+	}
+}
+
+.form__input,
+.form__textarea{
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	border: none;
+	background: transparent;
+	color: #000;
+	font-size: v(14);
+	position: relative;
+	z-index: 2;
+	font-weight: 400;
+	border: none;
+	border-radius: v(3);
+	cursor: pointer;
+	transition: .3s;
+
+	&:focus,
+	&.valid{
+		& + .form__label{
+			font-size: v(10);
+			top: v(4);
+		}
+	}
+	&:hover{
+		border-color: rgba(129, 141, 94, 0.5);;
+	}
+	&:focus{
+
+	}
+
+	@include media($w-lg) {
+		font-size: v(16);
+		&:focus,
+		&.valid{
+			& + .form__label{
+				font-size: v(12);
+				top: v(9);
+			}
+		}
+	}
+	@include media($w-xl) {
+		font-size: v(20);
+		&:focus,
+		&.valid{
+			& + .form__label{
+				font-size: v(12);
+				top: v(9);
+			}
+		}
+	}
+}
+.form__input{
+	height: v(50);
+	padding-left: v(20);
+	padding-right: v(20);
+
+	&.error{
+		& + .form__label + .form__error,
+		& + .form__error{
+			opacity: 1;
+			margin-top: 0;
+		}
+	}
+
+	@include media($w-lg) {
+		height: v(70);
+		padding: 0 v(30);
+	}
+	@include media($w-xl) {
+		height: v(89);
+		padding-left: v(40);
+		padding-right: v(40);
+	}
+}
+.form__textarea{
+	resize: none;
+	min-height: v(50);
+	line-height: 1;
+
+	@include media($w-lg) {
+		min-height: v(70);
+		padding: v(27) v(30) 0;
+	}
+	@include media($w-xl) {
+		padding-left: v(40);
+		padding-right: v(40);
+		padding-top: v(27);
+		min-height: v(92);
+	}
+}
+.form__label{
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: v(14);
+	font-weight: 400;
+	transition: .2s;
+	padding: 0 v(20);
+	font-size: v(14);
+	line-height: 1.35;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: $text_gray;
+
+	@include media($w-lg) {
+		padding: 0 v(30);
+		font-size: v(18);
+		top: v(21);
+	}
+	@include media($w-xl) {
+		padding: 0 v(40);
+		font-size: v(20);
+		top: v(31);
+	}
+}
+.form__error{
+
+}
+.form__subm{
+	margin-top: v(15);
+
+	@include media($w-xl) {
+		margin-top: v(30);
+	}
+}
+.form__submit{
+
+}

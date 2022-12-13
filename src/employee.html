@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('_meta.html')
+
+</head>
+<body>
+
+	@@include('_header.html')
+
+	<section class="section_emp">
+		<div class="container">
+			<ul class="bread__list list-hor">
+				<li>
+					<a href="./about.html" class="link">О нас</a>
+					<svg class="ico"><use xlink:href="./img/sprite.svg#bread-left" /></svg>
+				</li>
+			</ul>
+
+			<div class="emp__cont">
+				<div class="emp__name title">
+					<h1>Игорь Верховодко</h1>
+				</div>
+				<div class="emp__img">
+					<img src="./images/employee.jpg" alt="">
+				</div>
+				<div class="emp__data">
+					<ul class="emp__attr list-vert">
+						<li class="emp__attr_item">
+							<div class="emp__attr_label">должность</div>
+							<div class="emp__attr_text">Старший партнер</div>
+						</li>
+						<li class="emp__attr_item">
+							<div class="emp__attr_label">Специализация</div>
+							<div class="emp__attr_text">
+								<p>Проведение юридического аудита</p>
+								<p>Защита объектов интеллектуальной собственности</p>
+								<p>Разрешение споров</p>
+							</div>
+						</li>
+						<li class="emp__attr_item">
+							<div class="emp__attr_label">год начала практики</div>
+							<div class="emp__attr_text">1990 г.</div>
+						</li>
+					</ul>
+
+					<div class="emp__contact">
+						<a href="tel:+375172907580" class="btn">+375 (17) 290-75-80</a>
+						<a href="mailto:igor.verkhovodko@verkhovodko.com" class="btn">igor.verkhovodko@verkhovodko.com</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="emp__information textinfo__cont">
+
+				<div class="textinfo__item">
+					<div class="textinfo__name">Ученая степень</div>
+					<div class="textinfo__text text text-sm">Кандидат юридических наук, доцент</div>
+				</div>
+
+				<div class="textinfo__item">
+					<div class="textinfo__name">Образование, курсы, стажировки</div>
+					<div class="textinfo__text text text-sm thide__outer">
+						<h4>Подразделы выделяем так</h4>
+						<p>Белорусский государственный университет, юридический факультет (Минск, Беларусь, 1991 г.)</p>
+						<p>Институт конституционной и правовой политики, (Будапешт, Венгрия) «Международный коммерческий арбитраж» (1998 г.)</p>
+						<p>
+							Университет г. Граца (Австрия) по программе «ТЭМПУС» <br>(1997—2001 гг.). с участием БГУ, университета Эрланген-Нюрнберг (Германия) и университета г. Грац (Австрия)
+						</p>
+						<h4>Подраздел два</h4>
+						<p>Белорусский государственный университет (Минск, Беларусь), юридический факультет, кандидат юридических наук, доцент</p>
+						<p>Высший Хозяйственный суд Республики Беларусь, стажировка <br>(2006 г.)</p>
+						<h4>Подраздел три</h4>
+						<p>Институт переподготовки и повышения квалификации для судей, прокуроров и юристов в Белорусском государственном университете (Минск, Беларусь, 2008)</p>
+						<p>Международный арбитражный суд при Белорусской торгово-промышленной палате, стажировка (2010 г.)</p>
+
+						<div class="thide__hidden">
+							<p>Белорусский государственный университет, юридический факультет (Минск, Беларусь, 1991 г.)</p>
+							<p>Институт конституционной и правовой политики, (Будапешт, Венгрия) «Международный коммерческий арбитраж» (1998 г.)</p>
+							<p>Университет г. Граца (Австрия) по программе «ТЭМПУС» <br>(1997—2001 гг.). с участием БГУ, университета Эрланген-Нюрнберг (Германия) и университета г. Грац (Австрия)</p>
+							<p>Белорусский государственный университет (Минск, Беларусь), юридический факультет, кандидат юридических наук, доцент</p>
+							<p>Высший Хозяйственный суд Республики Беларусь, стажировка <br>(2006 г.)</p>
+							<p>Институт переподготовки и повышения квалификации для судей, прокуроров и юристов в Белорусском государственном университете (Минск, Беларусь, 2008)</p>
+						</div>
+						<div class="textinfo__more thide__btn">
+							<button type="button" class="btn btn-plus">
+								<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#plus" /></svg>
+								<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#minus" /></svg>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="textinfo__item">
+					<div class="textinfo__name">профессиональные достижения</div>
+					<div class="textinfo__text text text-sm">Кандидат юридических наук, доцент</div>
+				</div>
+
+				<div class="textinfo__item">
+					<div class="textinfo__name">языки</div>
+					<div class="textinfo__text text text-sm">
+						<ul class="list-hor">
+							<li>Русский</li>
+							<li>Белорусский</li>
+							<li>Английский</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="textinfo__item">
+					<div class="textinfo__name">страна</div>
+					<div class="textinfo__text text text-sm">Беларусь</div>
+				</div>
+
+			</div>
+
+
+		</div>
+	</section>	
+
+	@@include('_footer.html')
+
+</body>
+</html>

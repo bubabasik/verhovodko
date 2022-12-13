@@ -1,0 +1,382 @@
+<div id="check-delivery" class="del__cont">
+	
+	<div class="del__tabs">
+		<ul class="etabs list-hor">
+			<li><a href="#delivery-1" class="link link_u">Доставка</a></li>
+			<li><a href="#delivery-2" class="link link_u">Самовывоз</a></li>
+		</ul>
+	</div>
+	<div class="del__contentdeltime__row">
+		
+		<div id="delivery-1" class="del__pane ">
+			
+			<div class="del__address">
+				<div class="form__inp del__address-inp">
+					<input type="text" name="address" class="form__input" />
+					<label class="form__label">Улица, дом *</label>
+					<div class="del__address-label">
+						<svg class="ico"><use xlink:href="#label" /></svg>
+						<span data-active="Скрыть" data-passive="Открыть карту" class="del__address-span"><span>Открыть карту</span></span>
+					</div>
+				</div>
+				<div class="del__address-map" >
+					<div class="del__address-mapin map__cont" id="map-address"></div>
+				</div>
+
+			</div>
+
+			<div class="form__row row">
+				
+				<div class="form__outer col-6 col-md-3">
+					<div class="form__inp">
+						<input type="text" name="NAME" class="form__input" />
+						<label class="form__label">Квартира/Офис *</label>
+					</div>
+				</div>
+				
+				<div class="form__outer col-6 col-md-3">
+					<div class="form__inp">
+						<input type="text" name="NAME" class="form__input" />
+						<label class="form__label">Подъезд</label>
+					</div>
+				</div>
+				
+				<div class="form__outer col-6 col-md-3">
+					<div class="form__inp">
+						<input type="text" name="NAME" class="form__input" />
+						<label class="form__label">Этаж</label>
+					</div>
+				</div>
+				
+				<div class="form__outer col-6 col-md-3">
+					<div class="form__inp">
+						<input type="text" name="NAME" class="form__input" />
+						<label class="form__label">Код домофона</label>
+					</div>
+				</div>
+
+			</div>
+			<div class="del__address-total">
+				<ul class="list-vert">
+					<li>Стоимость доставки: <span>Бесплатно</span></li>
+					<li>Минимальная сумма заказа: <span>900 руб.</span></li>
+				</ul>
+			</div>
+
+		</div>
+		
+		<div id="delivery-2" class="del__pane ">
+			
+			<div class="pickup__cont">
+				<div id="map-pickup" class="pickup__map map__cont"></div>
+				<div class="pickup__data">
+					<div class="pickup__capt">
+						<svg class="ico"><use xlink:href="#label" /></svg>
+						Боровичи, пер. Реппо, 4/8
+					</div>
+					<ul class="pickup__list list-vert">
+						<li>ВС–ЧТ: <strong>12:00 – 22:00</strong></li>
+						<li>ПТ–СБ: <strong>12:00 – 23:00</strong></li>
+					</ul>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
+	<div class="deltime__row form__row row">
+		<div class="form__outer col-md-6 col-lg-12 col-xl-6">
+			<div class="deltime__title">Выберите время доставки:</div>
+			<div class="deltime__change">
+				<label class="form__check">
+					<input type="radio" name="time_type" value="0" checked/>
+					<span>Как можно скорее</span>
+				</label>
+				<label class="form__check">
+					<input type="radio" name="time_type" value="1" />
+					<span>Доставка ко времени</span>
+				</label>
+			</div>
+		</div>
+		<div class="form__outer col-md-6 col-lg-12 col-xl-6 deltime__select" style="display: none;">
+			<div class="form__row row">
+				<div class="form__outer col-6">
+					<div class="time__item time__item-date ">
+						<div class="time__vis drop__custom" >
+							<span>Сегодня</span>
+							<svg class="ico"><use xlink:href="#arr-down" /></svg>
+							<input type="hidden" name="time_date" value="Сегодня" />
+						</div>
+						<div class="time__list drop__list" data-cont="time__item-date"></div>
+					</div>
+				</div>
+				<div class="form__outer col-6">
+					<div class="time__item time__item-time drop__item">
+						<div class="time__vis drop__btn" >
+							<span>Время</span>
+							<svg class="ico"><use xlink:href="#arr-down" /></svg>
+						</div>
+						<div class="time__list drop__list drop__change drop__change-name" data-cont="time__item-time">
+							<ul class="list-vert">
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="10:00" data-label="10:00" />
+										<span>10:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="10:30" data-label="10:30" />
+										<span>10:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="11:00" data-label="11:00" />
+										<span>11:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="11:30" data-label="11:30" />
+										<span>11:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="12:00" data-label="12:00" />
+										<span>12:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="12:30" data-label="12:30" />
+										<span>12:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="13:00" data-label="13:00" />
+										<span>13:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="13:30" data-label="13:30" />
+										<span>13:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="14:00" data-label="14:00" />
+										<span>14:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="14:30" data-label="14:30" />
+										<span>14:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="15:00" data-label="15:00" />
+										<span>15:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="15:30" data-label="15:30" />
+										<span>15:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="16:00" data-label="16:00" />
+										<span>16:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="16:30" data-label="16:30" />
+										<span>16:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="17:00" data-label="17:00" />
+										<span>17:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="17:30" data-label="17:30" />
+										<span>17:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="18:00" data-label="18:00" />
+										<span>18:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="18:30" data-label="18:30" />
+										<span>18:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="19:00" data-label="19:00" />
+										<span>19:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="19:30" data-label="19:30" />
+										<span>19:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="20:00" data-label="20:00" />
+										<span>20:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="20:30" data-label="20:30" />
+										<span>20:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="21:00" data-label="21:00" />
+										<span>21:00</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="21:30" data-label="21:30" />
+										<span>21:30</span>
+									</label>
+								</li>
+								<li>
+									<label class="time__var">
+										<input type="radio" name="time_time" value="22:00" data-label="22:00" />
+										<span>22:00</span>
+									</label>
+								</li>
+
+
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<script>
+	$(function(){
+
+		$.datepicker.regional['ru'] = {
+			closeText: 'Закрыть',
+			prevText: 'Предыдущий',
+			nextText: 'Следующий',
+			currentText: 'Сегодня',
+			monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+			monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+			dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+			dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+			dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+			weekHeader: 'Не',
+			dateFormat: 'dd.mm.yy',
+			firstDay: 1,
+			isRTL: false,
+			showMonthAfterYear: false,
+			yearSuffix: ''
+		};
+		$.datepicker.setDefaults($.datepicker.regional['ru']);
+
+		$('.time__item-date .time__vis').on('click', function(){
+
+			var 
+			$list = $('.time__item-date .time__list');
+
+			$('.overlay').addClass('active');
+
+			$('#datepicker')
+			.css({
+				'top'	: $list.offset().top,
+				'left'	: $list.offset().left
+			})
+			.addClass('active');
+
+		})
+
+		var 
+		today = new Date(),
+		d = today.getDate(),
+		m = today.getMonth()+1,
+		nowDate = ((''+d).length<2 ? '0' : '') + d + '.' + 
+		((''+m).length<2 ? '0' : '') + m + '.' +
+		today.getFullYear();
+
+		$("#datepicker").datepicker({
+			minDate: today,
+			defaultDate: today,
+			onSelect: function(date){
+				if(date === nowDate) {
+					date = 'Сегодня';
+				}
+
+				$('input[name="time_date"]').val(date);
+				$('.time__item-date .time__vis span').text(date);
+				hideModals();
+			}
+		});
+
+		ymaps.ready(function () {
+			var mapPickup = new ymaps.Map('map-pickup', {
+				center: [55.751574, 37.573856],
+				zoom: 10,
+				controls: ['zoomControl']
+			}, {
+				searchControlProvider: 'yandex#search'
+			});
+
+			placePickup = new ymaps.Placemark(mapPickup.getCenter(), {
+				hintContent: 'Собственный значок метки',
+				balloonContent: 'Это красивая метка'
+			}, {
+				iconLayout: 'default#image',
+				iconImageHref: './images/label.svg',
+				iconImageSize: [15, 19],
+				iconImageOffset: [-7.5, -19]
+			});
+
+			mapPickup.geoObjects.add(placePickup);
+		});
+
+		ymaps.ready(function () {
+			var myMap = new ymaps.Map('map-address', {
+				center: [55.751574, 37.573856],
+				zoom: 10,
+				controls: ['zoomControl']
+			}, {
+				searchControlProvider: 'yandex#search'
+			});
+		});
+	})
+</script>
+
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">

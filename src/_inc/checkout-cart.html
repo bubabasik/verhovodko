@@ -1,0 +1,186 @@
+<div class="cart__cont">
+
+	@@include('item-cart.html',{
+	"id"						: "1",
+	"class"					: "cart__change",
+	"name" 					: "Пицца Маргарита",
+	"descr" 				: "Мука, вода, моцарелла, томатный соус, базилик",
+	"image" 				: "pizza-1.jpg",
+
+	"option": {
+	"size"					: true, 	
+	"found"					: true 	}, })
+
+
+	@@include('item-cart.html',{
+	"id"						: "2",
+	"class"					: "cart__change",
+	"name" 					: "Пицца Маргарита",
+	"descr" 				: "Мука, вода, моцарелла, томатный соус, базилик",
+	"image" 				: "pizza-2.jpg",
+
+	"option": {
+	"size"					: false, 	
+	"found"					: true 	}, })
+
+
+	@@include('item-cart.html',{
+	"id"						: "3",
+	"class"					: "cart__change",
+	"name" 					: "Пицца Маргарита",
+	"descr" 				: "Мука, вода, моцарелла, томатный соус, базилик",
+	"image" 				: "pasta-2.jpg",
+
+	"option": {
+	"size"					: false, 	
+	"found"					: false 	}, })
+
+
+	@@include('item-cart.html',{
+	"id"						: "4",
+	"class"					: "cart__change",
+	"name" 					: "Пицца Маргарита",
+	"descr" 				: "Мука, вода, моцарелла, томатный соус, базилик",
+	"image" 				: "pasta-1.jpg",
+
+	"option": {
+	"size"					: true, 	
+	"found"					: false 	}, })
+
+	<div class="cdop__cont">
+
+		<div class="cdop__title">Пицца с соусом вкуснее</div>
+		<div class="cdop__sub">Добавьте к заказу</div>
+
+		<div class="cdop__slider-out">
+			<div class="cdop__slider">
+
+				<!-- ITEM -->
+				<div>
+					<div class="cdop__item btn-outer">
+						<div class="cdop__img">
+							<img src="./images/cdop-1.png" alt="">
+						</div>
+						<div class="cdop__data">
+							<div class="cdop__name">Неаполитанский</div>
+							<div class="cdop__price">
+								90 руб. 
+								<div class="cdop__plus btn"><svg class="ico ico-center"><use xlink:href="#plus" /></svg></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- # ITEM -->
+
+				<!-- ITEM -->
+				<div>
+					<div class="cdop__item btn-outer">
+						<div class="cdop__img">
+							<img src="./images/cdop-2.png" alt="">
+						</div>
+						<div class="cdop__data">
+							<div class="cdop__name">Томатный</div>
+							<div class="cdop__price">
+								190 руб. 
+								<div class="cdop__plus btn"><svg class="ico ico-center"><use xlink:href="#plus" /></svg></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- # ITEM -->
+
+				<!-- ITEM -->
+				<div>
+					<div class="cdop__item btn-outer">
+						<div class="cdop__img">
+							<img src="./images/cdop-3.png" alt="">
+						</div>
+						<div class="cdop__data">
+							<div class="cdop__name">Вегетарианско-веганский</div>
+							<div class="cdop__price">
+								190 руб. 
+								<div class="cdop__plus btn"><svg class="ico ico-center"><use xlink:href="#plus" /></svg></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- # ITEM -->
+
+				<!-- ITEM -->
+				<div>
+					<div class="cdop__item btn-outer">
+						<div class="cdop__img">
+							<img src="./images/cdop-1.png" alt="">
+						</div>
+						<div class="cdop__data">
+							<div class="cdop__name">Горчичный</div>
+							<div class="cdop__price">
+								90 руб. 
+								<div class="cdop__plus btn"><svg class="ico ico-center"><use xlink:href="#plus" /></svg></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- # ITEM -->
+
+				<!-- ITEM -->
+				<div>
+					<div class="cdop__item btn-outer">
+						<div class="cdop__img">
+							<img src="./images/cdop-2.png" alt="">
+						</div>
+						<div class="cdop__data">
+							<div class="cdop__name">Барбекю</div>
+							<div class="cdop__price">
+								190 руб. 
+								<div class="cdop__plus btn"><svg class="ico ico-center"><use xlink:href="#plus" /></svg></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- # ITEM -->
+
+				<!-- ITEM -->
+				<div>
+					<div class="cdop__item btn-outer">
+						<div class="cdop__img">
+							<img src="./images/cdop-3.png" alt="">
+						</div>
+						<div class="cdop__data">
+							<div class="cdop__name">Кисло-сладкий</div>
+							<div class="cdop__price">
+								190 руб. 
+								<div class="cdop__plus btn"><svg class="ico ico-center"><use xlink:href="#plus" /></svg></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- # ITEM -->
+
+
+			</div>
+		</div>
+
+	</div> 
+
+	@@include('item-cart.html',{
+	"id"						: "999",
+	"class"					: "",
+	"name" 					: "Комлект приборов",
+	"descr" 				: "",
+	"image" 				: "pasta-1.jpg",
+
+	"option": {
+	"size"					: false, 	
+	"found"					: false 	}, })
+
+</div>
+<div class="total__cont">
+	<div class="total__name">Итого:</div>
+	<div class="total__data">
+		<div class="total__datain">
+			<div class="total__price"><span>17 510</span> руб.</div>
+			<div class="total__weight">1 500 гр.</div>
+		</div>
+	</div>
+</div>

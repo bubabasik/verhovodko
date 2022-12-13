@@ -1,0 +1,33 @@
+.section_career{
+
+	@include media($w-xl) {
+		padding-bottom: v(156);
+	}
+}
+.career__cont{
+
+	@include media($w-xl) {
+		margin-top: v(88);
+	}
+}
+.career__text{
+
+}
+.career__btn{
+
+	@include media($w-xl) {
+		margin-top: v(60);
+	}
+}
+.career__aside{
+
+}
+.career__info{
+
+	@include media($w-xl) {
+		margin-top: v(192);
+		.textinfo__cont{
+			margin-top: v(87);
+		}
+	}
+}	

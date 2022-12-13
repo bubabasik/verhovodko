@@ -1,0 +1,148 @@
+.section_prj{
+	padding-bottom: v(100);
+	@include media($w-xl) {
+		padding-bottom: v(200);
+	}
+}
+.prj__row{
+	margin-top: v(40);
+
+	@include media($w-lg) {
+		margin: v(60) v(-10) 0;
+	}
+	@include media($w-xl) {
+		margin: v(80) v(-15) 0;
+		.pagination{
+			margin-top: v(39);
+		}
+	}
+}
+.prj__outer{
+	margin-bottom: v(30);
+	display: flex;
+
+	@include media($w-lg) {
+		padding: 0 v(10);
+		margin-bottom: v(20);
+	}
+	@include media($w-xl) {
+		margin-bottom: v(41);
+		padding: 0 v(15);
+		.prj__more{
+			right: v(35);
+		}
+	}
+}
+
+.prj__item{
+	line-height: 1.35;
+	padding: v(20);
+	position: relative;
+	background: $back;
+	display: inline-flex;
+	width: 100%;
+	flex-flow: column;
+	text-decoration: none !important;
+
+	&:hover{
+		.prj__title{
+			color: $text_purple;
+		}
+		.prj__more{
+			transform: none;
+			visibility: visible;
+			opacity: 1;
+		}
+		.prj__text{
+			&:before{
+				width: v(20);
+			}
+		}
+	}
+
+
+	@include media($w-xl) {
+		padding: v(40);
+		&:hover{
+			.prj__text{
+				&:before{
+					width: v(40);
+				}
+			}
+		}
+
+	}
+}
+.prj__title{
+	font-size: v(20);
+	letter-spacing: -0.02em;
+	color: #000;
+	transition: .3s ease-in-out;
+
+	@include media($w-lg) {
+		font-size: v(18);
+	}
+	@include media($w-xl) {
+		font-size: v(32);
+	}
+}
+.prj__text{
+	font-size: v(16);
+	color: $text_gray;
+	margin-top: v(15);
+	padding-top: v(15);
+	position: relative;
+	&:before{
+		content: '';
+		display: inline-block;
+		vertical-align: top;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: v(40);
+		height: 1px;
+		background: $purple;
+		transition: .3s ease-in-out;
+	}
+
+	@include media($w-xl) {
+		font-size: v(26);
+		margin-top: v(20);
+		padding-top: v(20);
+		&:before{
+			width: v(80);
+		}
+	}
+}
+.prj__more{
+	position: absolute;
+	width: v(36);
+	height: v(36);
+	border-radius: 50%;
+	background: $purple;
+	transition: .3s ease-in-out;
+	right: v(20);
+	bottom: v(-18);
+	transform: scale(1);
+
+	svg{
+		fill: #fff;
+		width: v(16);
+		height: v(13);
+	}
+
+	@include media($w-lg) {
+		transform: scale(0);
+		opacity: 0;
+		visibility: hidden;
+	}
+	@include media($w-xl) {
+		width: v(60);
+		height: v(60);
+		bottom: v(-30);
+		svg{
+			width: v(22);
+			height: v(20);
+		}
+	}
+}

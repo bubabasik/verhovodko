@@ -1,0 +1,107 @@
+<div class="cart__outer">
+	<div class="cart__item">
+		<div class="cart__img">
+			<img src="./images/products/@@image" alt="">
+		</div>
+		<div class="cart__data">
+			<div class="cart__name">
+				@@name
+				<span><svg class="ico ico-center"><use xlink:href="#arr-down" /></svg></span>
+			</div>
+			<div class="cart__descr">@@descr</div>
+			@@if (id === '999') {
+			<div class="cart__options">
+				<div class="pr__select drop__item">
+					<div class="">
+						<span>Вилка</span>
+					</div>
+				</div>
+				<div class="pr__select drop__item">
+					<div class="">
+						<span>Нож</span>
+					</div>
+				</div>
+			</div> }
+			@@if (option.size === true || option.found === true) {	
+			<div class="cart__options">
+
+				@@if (option.size === true) {	
+				<div class="cart__option">
+					<div class="pr__select drop__item">
+						<div class="pr__select-name drop__btn">
+							<span>Стандартная 30см</span>
+							<svg class="ico"><use xlink:href="#arr-down" /></svg>
+						</div>
+						<div class="pr__select-list drop__list drop__change">
+							<label class="pr__select-item active" data-val="Стандартная 30см">
+								<input type="radio" name="product[@@id][OPTION_ID-2]" value="Стандартная 30см" data-price="0" data-weight="0" checked>
+								<span>Стандартная 30см</span>
+							</label>
+							<label class="pr__select-item" data-val="Мини 26см">
+								<input type="radio" name="product[@@id][OPTION_ID-2]" value="Мини 26см" data-price="0" data-weight="0" checked>
+								<span>Мини 26см</span>
+							</label>
+						</div>
+					</div>
+				</div> }
+
+				@@if (option.found === true) {	
+				<div class="cart__option">
+					<div class="pr__select drop__item">
+						<div class="pr__select-name dis drop__btn">
+							<span>Томатная основа</span>
+							<svg class="ico"><use xlink:href="#arr-down" /></svg>
+						</div>
+						<div class="pr__select-list drop__list drop__change">
+							<label class="pr__select-item active" data-val="Томатная основа">
+								<input type="radio" name="product[@@id][OPTION_ID-2]" value="Томатная основа" data-price="0" data-weight="0" checked>
+								<span>Томатная основа</span>
+							</label>
+							<label class="pr__select-item" data-val="Сливочная основа">
+								<input type="radio" name="product[@@id][OPTION_ID-2]" value="Сливочная основа" data-price="+50" data-weight="0" >
+								<span>Сливочная основа</span>
+							</label>
+						</div>
+					</div>
+				</div> }
+
+			</div> }
+
+		</div>
+		<div class="cart__buttons">
+
+			<div class="cart__qty qty__cont qty-sm">
+				<button type="button" class="qty-btn qty-minus">
+					<svg class="ico ico-center"><use xlink:href="#minus" /></svg>
+				</button>
+				<input type="text" name="pr__num" value="1" class="qty-input" readonly />
+				<button type="button" class="qty-btn qty-plus">
+					<svg class="ico ico-center"><use xlink:href="#plus" /></svg>
+				</button>
+			</div>
+			<div class="cart__total">
+				<div class="cart__total-price"><span>510</span> руб.</div>
+				<div class="cart__total-weight">150 гр.</div>
+			</div>
+
+		</div>
+
+		<button class="cart__del" type="button">
+			<svg class="ico ico-center"><use xlink:href="#close" /></svg>
+		</button>
+	</div>
+	<div class="cart__delete">
+		<div class="cart__delete-in">
+			<div class="cart__delete-name">
+				Удалено из заказа
+				<svg class="ico" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="6.5" cy="6.5" r="6" stroke="#D1D5D7"/>
+					<circle cx="6.5" cy="6.5" r="6" transform="rotate(-90 6.5 6.5)" stroke="#818D5E" class="circle-anim"/>
+				</svg>
+			</div>
+			<div class="cart__delete-btn">
+				<button type="button" class="cart__delete-return btn btn-trans">Вернуть</button>
+			</div>
+		</div>
+	</div>
+</div>
