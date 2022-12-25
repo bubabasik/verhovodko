@@ -11,7 +11,12 @@
 	}
 }
 .career__text{
+	opacity: 0;
+	transition: var(--appear-trans);
 
+	&.active{
+		opacity: 1;
+	}
 }
 .career__btn{
 

@@ -1,26 +1,26 @@
 <section class="section_consult">
 	<div class="container">
-		<div class="title">
+		<div class="title title-appear">
 			<h2>
-				@@title
+				<span class="line_title">@@title</span>
 			</h2>
 		</div>
-		<div class="consult__cont row">
+		<div class="consult__cont row anim-parent">
 			<div class="consult__spec col-12 col-md-7 col-xl-6">
 				<div class="consult__data">
-					<div class="consult__name">Игорь Верховодко</div>
-					<div class="consult__exp">Cтарший партнёр</div>
-					<ul class="list-vert consult__contact">
+					<div class="consult__name anim-appear dl-1">Игорь Верховодко</div>
+					<div class="consult__exp anim-appear dl-2">Cтарший партнёр</div>
+					<ul class="list-vert consult__contact anim-appear dl-3">
 						<li><a href="tel:+375172907580" class="link">+375 (17) 290-75-80</a></li>
 						<li><a href="tel:+375172907580" class="link">+375 (17) 290-75-80</a></li>
 						<li><a href="mailto:minsk@verkhovodko.com" class="link">minsk@verkhovodko.com</a></li>
 					</ul>
 				</div>
-				<div class="consult__image">
+				<div class="consult__image anim-appear dl-4">
 					<img src="./images/consult.jpg" alt="">
 				</div>
 			</div>
-			<div class="consult__form col-12 col-md-5 col-xl-6">
+			<div class="consult__form col-12 col-md-5 col-xl-6 anim-appear dl-6">
 				<form action="#" class="form">
 					<div class="form__inp">
 						<input type="text" name="name" value="" class="form__input" />
@@ -39,8 +39,11 @@
 						<div class="form__label">Напишите ваш вопрос</div>
 					</div>
 					<div class="form__subm">
-						<button class="btn btn-circle form__submit" type="submit">
-							<span class="btn-icon"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></span>
+						<button class="btn btn-circle btn-arrow form__submit" type="submit">
+							<span class="btn-icon btn-arrow-icon">
+								<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+								<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+							</span>
 							отправить
 						</button>
 					</div>

@@ -1,6 +1,7 @@
 @import "_import/bootstrap/bootstrap-grid"; 	
 @import "_import/_slick"; 	
 @import "_import/_fancy"; 	
+@import "_import/_locomotive-scroll"; 	
 // @import "_import/_formstyler"; 	
 // @import "_import/_scrollpane"; 	
 // @import "_import/_jquery.scrollbar"; 	
@@ -49,3 +50,6 @@
 @import "_import/trust";
 @import "_import/rate";
 @import "_import/contact";
+
+
+@import "_import/content/animation";

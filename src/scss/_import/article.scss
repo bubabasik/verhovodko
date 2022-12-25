@@ -1,5 +1,12 @@
 .section_article{
 
+	&.active{
+		.article__info,
+		.article__data{
+			opacity: 1;
+		}
+	}
+
 	padding-bottom: v(101);
 	.content__title{
 		font-size: v(26);
@@ -44,6 +51,11 @@
 	margin-right: v(-8);
 	padding-bottom: v(21);
 	position: relative;
+
+	transition: var(--appear-trans);
+	opacity: 0;
+	transition-delay: .2s;
+
 	&:before{
 		content: '';
 		display: inline-block;
@@ -100,6 +112,9 @@
 }
 .article__data{
 	position: relative;
+	transition: var(--appear-trans);
+	opacity: 0;
+	transition-delay: .4s;
 
 	@include media($w-md) {
 		margin-top: v(50);
@@ -157,6 +172,7 @@
 		font-size: 0;
 		padding-bottom: 69.375%;
 		position: relative;
+		overflow: hidden;
 		img{
 			position: absolute;
 			top: 0;

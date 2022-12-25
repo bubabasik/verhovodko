@@ -21,6 +21,31 @@
 	&-md{
 		font-size: v(32);
 	}
+	&-appear{
+		.unwrap{
+			display: inline-flex;
+			overflow: hidden;
+			@for $i from 1 through 10 {
+				&:nth-child(#{$i}) {
+					.upwrap{
+						transition-delay: calc( ( #{$i} - 1 )  * .1s);
+					}
+				}
+			}
+		}	
+		.upwrap{
+			display: inline-block;
+			will-change: transform;
+			transform: translate3d(0, calc(100% + 0.25em), 0);
+			transition: transform .7s cubic-bezier(.445,.05,.55,.95);
+		}
+		
+		&.anim-active{
+			.upwrap{
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
 
 	@include media($w-md) {
 		font-size: v(44);
@@ -53,6 +78,7 @@
 
 .more{
 	margin-top: v(15);
+
 
 	@include media($w-xl) {
 		margin-top: v(20);
@@ -92,6 +118,13 @@
 	}
 	li{
 		margin-right: v(20);
+
+		@for $i from 1 through 20 {
+			&:nth-child(#{$i}) {
+				transition-delay: calc( ( #{$i} - 1 )  * .15s);
+			}
+		}
+		
 		&:last-child{
 			margin-right: 0 !important;
 		}

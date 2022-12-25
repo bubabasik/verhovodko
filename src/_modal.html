@@ -3,27 +3,30 @@
 	<div id="modal_menu" class="mmenu__cont modal__cont modal__cont-dark">
 		<div class="modal__inner">
 			<ul class="mmenu__menu list-vert">
-				<li><a href="./project-list.html" class="link">Проекты</a></li>
-				<li><a href="./service-list.html" class="link">Специализация</a></li>
-				<li><a href="./about.html" class="link">О нас</a></li>
-				<li><a href="./news.html" class="link">Инфо-центр</a></li>
-				<li><a href="./career.html" class="link">Карьера</a></li>
-				<li><a href="./contact.html" class="link">Контакты</a></li>
+				<li class="anim-modal dl-1"><a href="./project-list.html" class="link">Проекты</a></li>
+				<li class="anim-modal dl-2"><a href="./service-list.html" class="link">Специализация</a></li>
+				<li class="anim-modal dl-3"><a href="./about.html" class="link">О нас</a></li>
+				<li class="anim-modal dl-4"><a href="./news.html" class="link">Инфо-центр</a></li>
+				<li class="anim-modal dl-5"><a href="./career.html" class="link">Карьера</a></li>
+				<li class="anim-modal dl-6"><a href="./contact.html" class="link">Контакты</a></li>
 			</ul>
-			<div class="mmenu__btn">
-				<a href="#modal_bid" class="btn btn-more btn-trans btn-white modalshow">
+			<div class="mmenu__btn anim-modal dl-7">
+				<a href="#modal_bid" class="btn btn-more btn-arrow btn-trans btn-white modalshow">
 					Напишите нам
-					<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+					<span class="btn-more-icon btn-arrow-icon">
+						<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+						<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+					</span>
 				</a>
 			</div>
 			<div class="modal__address modal__address-light">
 
-				<div class="modal__address_item">
+				<div class="modal__address_item anim-modal dl-8">
 					<span>Минск</span>
 					<a href="tel:+375172907580" class="link">+375 (17) 290-75-80</a>
 				</div>
 
-				<div class="modal__address_item">
+				<div class="modal__address_item anim-modal dl-9">
 					<span>Москва</span>
 					<a href="tel:+375172907580" class="link">+7 (495) 790-82-85</a>
 				</div>
@@ -34,25 +37,25 @@
 
 	<div id="modal_bid" class="mmenu__cont modal__cont">
 		<div class="modal__inner">
-			<div class="modal__title">Отправьте ваш запрос</div>
+			<div class="modal__title anim-modal dl-1">Отправьте ваш запрос</div>
 			<form action="#" class="form modal__form">
-				<div class="form__inp">
+				<div class="form__inp anim-modal dl-2">
 					<input type="text" name="name" value="" class="form__input" />
 					<div class="form__label">Ваше имя</div>
 				</div>
-				<div class="form__inp">
+				<div class="form__inp anim-modal dl-3">
 					<input type="text" name="email" value="" class="form__input" />
 					<div class="form__label">Ваш email</div>
 				</div>
-				<div class="form__inp">
+				<div class="form__inp anim-modal dl-4">
 					<input type="tel" name="phone" value="" class="form__input" />
 					<div class="form__label">Телефон</div>
 				</div>
-				<div class="form__inp">
+				<div class="form__inp anim-modal dl-5">
 					<textarea name="message" class="form__textarea"></textarea>
 					<div class="form__label">Напишите ваш вопрос</div>
 				</div>
-				<div class="form__subm">
+				<div class="form__subm anim-modal dl-6">
 					<button class="btn btn-circle form__submit" type="submit">
 						<span class="btn-icon"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></span>
 						отправить
@@ -61,12 +64,12 @@
 			</form>
 			<div class="modal__address modal__address-light">
 
-				<div class="modal__address_item">
+				<div class="modal__address_item anim-modal dl-7">
 					<span>Минск</span>
 					<a href="tel:+375172907580" class="link">+375 (17) 290-75-80</a>
 				</div>
 
-				<div class="modal__address_item">
+				<div class="modal__address_item anim-modal dl-8">
 					<span>Москва</span>
 					<a href="tel:+375172907580" class="link">+7 (495) 790-82-85</a>
 				</div>
@@ -79,12 +82,12 @@
 		<div class="modal__inner container">
 			<form action="#" class="search__form">
 				<div class="search__inp">
-					<input type="text" name="search" class="search__input" placeholder="Введите ваш запрос" >
-					<button type="submit" class="btn btn-scale search__submit">
+					<input type="text" name="search" class="search__input anim-modal dl-1" placeholder="Введите ваш запрос" >
+					<button type="submit" class="btn btn-scale search__submit anim-modal dl-2">
 						<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
 					</button>
 				</div>
-				<div class="search__sub">
+				<div class="search__sub anim-modal dl-3">
 					поиск по сайту
 				</div>
 			</form>

@@ -39,6 +39,11 @@ winScroll = function(){
 	$('.pfl-lazy').each(function(){
 		$(this).isVisible();
 	});
+	if($(window).scrollTop() > $(window).height()) {
+		$('.fixed__logo, .fixed__menu').addClass('fixed');
+	}else{
+		$('.fixed__logo, .fixed__menu').removeClass('fixed');
+	}
 }
 showModal = function($href, $class=""){
 	$instance = $.fancybox.getInstance();
@@ -50,13 +55,13 @@ showModal = function($href, $class=""){
 		opts : {
 			baseClass: $class,
 			animationEffect: false,
-			animationDuration: 300,
+			animationDuration: 700,
 			transitionEffect: false,
-			transitionDuration: 300,
+			transitionDuration: 700,
 			touch: false,
 			btnTpl: {
-				close: '<button class="btn btn-scale modal__close" data-fancybox-close><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#close" /></svg></button>',
-				smallBtn: '<button class="btn btn-scale modal__close" data-fancybox-close><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#close" /></svg></button>',
+				close: '<button class="btn btn-scale modal__close anim-modal dl-0" data-fancybox-close><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#close" /></svg></button>',
+				smallBtn: '<button class="btn btn-scale modal__close anim-modal dl-0" data-fancybox-close><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#close" /></svg></button>',
 			},
 			afterShow : function( instance, current ) {
 				$(current.src).addClass('active');
@@ -80,6 +85,7 @@ scrollTo = function(target = '') {
 }
 
 $(function(){
+
 
 	$(window).on('load scroll resize', winScroll);
 
@@ -128,8 +134,8 @@ $(function(){
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			dots: false,
-			prevArrow: '<button type="button" class="slick-prev nav__item nav__item-prev"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg></button>',
-			nextArrow: '<button type="button" class="slick-next nav__item nav__item-next"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></button>',
+			prevArrow: '<button type="button" class="slick-prev btn-arrow-icon nav__item nav__item-prev"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg></button>',
+			nextArrow: '<button type="button" class="slick-next btn-arrow-icon nav__item nav__item-next"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></button>',
 			responsive: [
 			{
 				breakpoint: 992,
@@ -155,8 +161,8 @@ $(function(){
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			dots: false,
-			prevArrow: '<button type="button" class="slick-prev nav__item nav__item-dark nav__item-prev"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg></button>',
-			nextArrow: '<button type="button" class="slick-next nav__item nav__item-dark nav__item-next"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></button>',
+			prevArrow: '<button type="button" class="slick-prev btn-arrow-icon nav__item nav__item-dark nav__item-prev"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg></button>',
+			nextArrow: '<button type="button" class="slick-next btn-arrow-icon nav__item nav__item-dark nav__item-next"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></button>',
 			responsive: [
 			{
 				breakpoint: 992,
@@ -187,8 +193,8 @@ $(function(){
 			dots: false,
 			fade: true,
 			cssEase: 'linear',
-			prevArrow: '<button type="button" class="slick-prev nav__item nav__item-dark nav__item-prev"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg></button>',
-			nextArrow: '<button type="button" class="slick-next nav__item nav__item-dark nav__item-next"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></button>',
+			prevArrow: '<button type="button" class="slick-prev btn-arrow-icon nav__item nav__item-dark nav__item-prev"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg></button>',
+			nextArrow: '<button type="button" class="slick-next btn-arrow-icon nav__item nav__item-dark nav__item-next"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></button>',
 			responsive: [
 			{
 				breakpoint: 992,

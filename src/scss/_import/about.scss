@@ -55,6 +55,7 @@
 	justify-content: space-between;
 	margin-top: v(20);
 
+
 	@include media($w-md) {
 		flex-flow: row;
 		margin-top: v(50);
@@ -70,6 +71,7 @@
 	}
 }
 .about__num{
+
 	&_cifr{
 		font-family: $font_title;
 		line-height: 1;

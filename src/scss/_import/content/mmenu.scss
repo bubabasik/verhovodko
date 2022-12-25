@@ -48,6 +48,10 @@
 	}
 	a{
 		color: #fff;
+		background: none;
+		&:hover{
+			color: var(--text-purple);
+		}
 	}
 
 	@include media($w-lg) {

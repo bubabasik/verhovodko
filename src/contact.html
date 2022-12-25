@@ -12,28 +12,28 @@
 		@@include('_header.html')
 
 		<section class="section_cont">
-			<div class="cont__map">
+			<div class="cont__map anim-item anim-appear">
 				<div id="cont-map-0" class="cont__map_item active"></div>
 				<div id="cont-map-1" class="cont__map_item"></div>
 				<div id="cont-map-2" class="cont__map_item"></div>
 			</div>
 			<div class="container">
-				<ul class="bread__list list-hor">
+				<ul class="bread__list list-hor anim-item anim-appear">
 					<li>
 						<a href="./index.html" class="link">Главная</a>
 						<svg class="ico"><use xlink:href="./img/sprite.svg#bread-left" /></svg>
 					</li>
 				</ul>
-				<div class="content__title title title-xl">
-					<h1>Контакты</h1>
+				<div class="content__title title title-xl title-appear">
+					<h1><span class="line_title">Контакты</span></h1>
 				</div>
 
-				<div class="cont__cont">
+				<div class="cont__cont anim-parent">
 					<ul class="cont__tabs list-hor">
-						<li><a href="#contact-0" class="cont__tab link active">Минск</a></li>
-						<li><a href="#contact-1" class="cont__tab link">Москва</a></li>
+						<li class="anim-appear"><a href="#contact-0" class="cont__tab link active">Минск</a></li>
+						<li class="anim-appear dl-1"><a href="#contact-1" class="cont__tab link">Москва</a></li>
 					</ul>
-					<div class="cont__content">
+					<div class="cont__content anim-appear dl-2">
 
 						<div id="contact-0" class="cont__pane active" data-id="0">
 							<div class="cont__address">
@@ -61,10 +61,13 @@
 
 
 						<div class="cont__btn">
-							<button class="cont__show btn btn-more">
+							<button class="cont__show btn btn-more btn-arrow">
 								<span class="cont__show_text">
 									открыть карту
-									<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+									<span class="btn-more-icon btn-arrow-icon">
+										<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+										<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+									</span>
 								</span>
 								<span class="cont__show_icon">
 									<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#close" /></svg>

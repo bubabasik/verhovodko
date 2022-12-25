@@ -1,3 +1,107 @@
+.fixed__logo{
+	position: fixed;
+	top: v(20);
+	left: v(20);
+	z-index: var(--z-fixed);
+	color: #fff!important;
+	mix-blend-mode: difference;
+	transition: .4s var(--ease-out);
+
+	&:not(.fixed){
+		top: v(-100)!important;
+	}
+
+	svg{
+		width: v(47);
+		height: v(19);
+		fill: currentColor;
+	}
+
+	@include media($w-lg) {
+		top: v(40);
+		left: v(40);
+		svg{
+			width: v(57);
+			height: v(23);
+		}
+	}
+	@include media($w-xl) {
+		top: v(68);
+		left: v(80);
+	}
+}
+.fixed__menu{
+	--width: 36;
+	--top: 20;
+	--right: 20;
+	--mr: 5;
+	--width-1: 25;
+	--width-2: 15;
+	--pos-top: 15;
+	top: calc(var(--fz) * var(--top));
+	right: calc(var(--fz) * var(--right));
+	width: calc(var(--fz) * var(--width));
+	height: calc(var(--fz) * var(--width));
+	position: fixed;
+	color: #fff!important;
+	mix-blend-mode: difference;
+	z-index: var(--z-fixed);
+	transition: .4s var(--ease-out);
+	&:not(.fixed){
+		top: v(-100)!important;
+	}
+
+	&:before,
+	&:after{
+		content: '';
+		display: inline-block;
+		vertical-align: top;
+		position: absolute;
+		height: 1px;
+		background: currentColor;
+		right: calc(var(--fz) * var(--mr));
+		transition: .5s var(--ease-out);
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	&:before{
+		width: calc(var(--fz) * var(--width-1));
+		top: calc(var(--fz) * var(--pos-top));
+	}
+	&:after{
+		width: calc(var(--fz) * var(--width-2));
+		bottom: calc(var(--fz) * var(--pos-top));
+	}
+
+	&:hover{
+		&:before{
+			margin-top: v(2);
+		}
+		&:after{
+			margin-bottom: v(2);
+			width: calc(var(--fz) * var(--width-1));
+		}
+	}
+
+	@include media($w-lg) {
+		--width: 50;
+		--top: 30;
+		--right: 40;
+		--mr: 7;
+		--width-1: 35;
+		--width-2: 20;
+		--pos-top: 21;
+	}
+	@include media($w-xl) {
+		--width: 80;
+		--top: 40;
+		--right: 70;
+		--mr: 10;
+		--width-1: 60;
+		--width-2: 35;
+		--pos-top: 35;
+	}
+}
 .header-light-outer{
 	.header{
 		@extend .header-light;
@@ -21,11 +125,17 @@
 		.head__menu{
 			a{
 				color: #fff;
+				&:hover{
+					opacity: 0.65;
+				}
 			}
 		}
 		.hlang{
 			a{
 				color: #fff;
+				&:hover{
+					opacity: 0.65;
+				}
 			}
 		}
 		.hphone{
@@ -33,12 +143,18 @@
 				a{
 					background: rgba(255, 255, 255, 0.07);
 					color: #fff;
+					&:hover{
+						opacity: 0.65;
+					}
 				}
 			}
 			&__cont{
 				color: #fff;
 				a{
 					color: #fff;
+					&:hover{
+						opacity: 0.65;
+					}
 				}
 			}
 			&__inner{
@@ -110,6 +226,11 @@
 	letter-spacing: 0.1em;
 	a{
 		color: #000;
+		transition: var(--link-transition), opacity .2s ease-out;
+		background: transparent;
+		&:hover{
+			color: var(--text_purple);
+		}
 	}
 	ul{
 		margin: 0 v(-15);
@@ -173,7 +294,7 @@
 }
 
 .hphone{
-	$hphone-trans-time: .3s;
+	$hphone-trans-time: .5s;
 	&__link{
 		a{
 			display: inline-flex;
@@ -190,6 +311,8 @@
 			height: v(16);
 			fill: currentColor;
 		}
+		.link{
+		}
 	}
 	&__cont{
 		position: relative;
@@ -200,6 +323,13 @@
 		white-space: nowrap;
 		.link{
 			padding-bottom: 0;
+			background: transparent;
+			transition: var(--link-transition), opacity .3s cubic-bezier(0,0,.2,1);
+		}
+		a{
+			&:hover{
+				color: var(--text_purple);
+			}
 		}
 
 		&:hover{
@@ -216,7 +346,7 @@
 				ul{
 					opacity: 1;
 					visibility: visible;
-					transition: .3s ease-in-out;
+					transition: .5s var(--ease);
 					transition-delay: .2s;
 				}
 			}
@@ -239,7 +369,7 @@
 			height: v(9);
 			fill: $line_gray;
 			margin-left: v(10);
-			transition: $hphone-trans-time ease-in-out;
+			transition: $hphone-trans-time var(--ease);
 		}
 	}
 	&__inner{
@@ -253,7 +383,7 @@
 		max-width: 100%;
 		max-height: 100%;
 		overflow: hidden;
-		transition: $hphone-trans-time ease-in-out;
+		transition: $hphone-trans-time var(--ease);
 		ul{
 			opacity: 0;
 			visibility: hidden;
@@ -261,7 +391,7 @@
 			display: flex;
 			flex-flow: column;
 			transition-delay: 0s;
-			transition: .2s;
+			transition: .5s var(--ease);
 		}
 		li{
 			display: flex;
@@ -333,6 +463,10 @@
 	font-size: v(12);
 	a{
 		color: #000;
+		background: transparent;
+		&:hover{
+			color: var(--text_purple);
+		}
 	}
 
 	@include media-max($w-md) {

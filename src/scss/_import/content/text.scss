@@ -13,6 +13,15 @@
 		}
 	}
 
+	&-appear{
+		opacity: 0;
+		transition: 1s cubic-bezier(0,0,.2,1);
+
+		&.active{
+			opacity: 1;
+		}
+	}
+
 
 	h1,
 	h2,
@@ -371,7 +380,8 @@
 }
 
 .textinfo{
-	&__cont{}
+	&__cont{
+	}
 	&__item{
 		display: flex;
 		flex-flow: column;

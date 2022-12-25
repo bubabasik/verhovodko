@@ -82,15 +82,24 @@
 	}
 }
 .modspec__item{
+	--time: 1s;
 	font-size: v(16);
 	line-height: 1.35;
 	text-decoration: none !important;
 	color: #000;
+	z-index: 1;
 
 	&.hover{
+		z-index: 5;
 		span{
 			opacity: 1;
 			visibility: visible;
+			transition: visibility var(--time) var(--ease), clip-path var(--time) var(--ease), opacity var(--time);
+			// clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			animation: var(--time) modspec;
+			img{
+				transform: scale(1);
+			}
 		}
 	}
 
@@ -106,7 +115,21 @@
 		background-position: center center;
 		opacity: 0;
 		visibility: hidden;
-		transition: .3s ease-in-out;
+		overflow: hidden;
+		transition: opacity .2s var(--ease);
+		// clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+		// transition: var(--time) var(--ease);
+
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: var(--time) var(--ease);
+			transform: scale(1.25);
+		}
 	}
 	&:hover{
 		color: $purple;
@@ -130,5 +153,14 @@
 			left: v(-160);
 			bottom: v(-226);
 		}
+	}
+}
+
+@include keyframes(modspec) {
+	0% {
+		clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+	}
+	100% {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 	}
 }

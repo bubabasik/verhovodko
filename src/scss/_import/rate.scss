@@ -22,6 +22,12 @@
 .rate__cont{
 	margin-top: v(42);
 
+	&.active{
+		.rate__item{
+			opacity: 1;
+		}
+	}
+
 	@include media($w-lg) {
 		margin-top: v(87);
 	}
@@ -33,6 +39,15 @@
 	align-items: flex-start;
 	justify-content: space-between;
 	padding: v(23) 0;
+	opacity: 0;
+	transition: var(--appear-trans);
+
+	
+	@for $i from 1 through 20 {
+		&:nth-child(#{$i}) {
+			transition-delay: calc( ( #{$i} - 1 )  * .15s);
+		}
+	}
 
 	&:last-child{
 		border-bottom: 1px solid $line_gray_soft;

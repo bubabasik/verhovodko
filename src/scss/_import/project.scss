@@ -6,6 +6,13 @@
 }
 .prj__row{
 	margin-top: v(40);
+	.prj__outer{
+		@for $i from 1 through 20 {
+			&:nth-child(#{$i}) {
+				transition-delay: calc( ( #{$i} - 1 )  * .1s);
+			}
+		}
+	}
 
 	@include media($w-lg) {
 		margin: v(60) v(-10) 0;
@@ -120,7 +127,7 @@
 	height: v(36);
 	border-radius: 50%;
 	background: $purple;
-	transition: .3s ease-in-out;
+	transition: .3s var(--ease-out);
 	right: v(20);
 	bottom: v(-18);
 	transform: scale(1);

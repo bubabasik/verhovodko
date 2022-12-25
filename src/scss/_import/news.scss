@@ -9,6 +9,13 @@
 	.pagination{
 		margin-top: 0;
 	}
+	.news__outer{
+		@for $i from 1 through 20 {
+			&:nth-child(#{$i}) {
+				transition-delay: calc( ( #{$i} - 1 )  * .1s);
+			}
+		}
+	}
 	@include media($w-md) {
 		.pagination{
 			margin-top: v(30);
@@ -50,6 +57,7 @@
 }
 .news__img{
 	font-size: 0;
+	overflow: hidden;
 	img{
 		width: 100%;
 	}

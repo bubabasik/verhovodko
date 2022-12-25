@@ -20,7 +20,7 @@
 	}
 }
 .emp__img{
-
+	overflow: hidden;
 	@include media($w-md) {
 		order: 1;
 		grid-row-start: 1;
@@ -33,6 +33,17 @@
 }
 .emp__data{
 	margin-top: v(39);
+
+	&.active{
+		.emp__attr_item{
+			opacity: 1;
+		}
+		.emp__contact{
+			.btn{
+				opacity: 1;
+			}
+		}
+	}
 
 	@include media($w-md) {
 		order: 3;
@@ -72,8 +83,15 @@
 	&_item{
 		line-height: 1.35;
 		margin-bottom: v(21);
+		opacity: 0;
+		transition: var(--appear-trans);
 		&:last-child{
 			margin-bottom: 0;
+		}
+		@for $i from 1 through 20 {
+			&:nth-child(#{$i}) {
+				transition-delay: calc( ( #{$i} - 1 )  * .15s);
+			}
 		}
 	}
 	&_label{
@@ -130,6 +148,9 @@
 		text-transform: none;
 		color: $text_purple;
 		min-height: v(40);
+		transition: var(--appear-trans), var(--btn-trans);
+
+
 		&[href^="mailto"] {
 			letter-spacing: 0.035em;
 		}

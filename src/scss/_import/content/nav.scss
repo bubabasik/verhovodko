@@ -28,6 +28,7 @@
 	&:not(.slick-disabled){
 		&:hover{
 			color: #fff;
+			
 		}	
 	}
 
@@ -55,7 +56,7 @@
 		margin-top: v(20);
 	}
 	&-next{
-		
+
 	}
 	&-top{
 		svg{
@@ -76,6 +77,7 @@
 			}
 		}
 	}
+
 
 	@include media($w-xl) {
 		width: v(80);
