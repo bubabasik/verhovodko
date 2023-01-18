@@ -22,20 +22,23 @@
 			<div class="content__title title title-xl title-appear">
 				<h1><span class="line_title">Инфо-центр</span></h1>
 			</div>
-			<div class="navline anim-parent">
-				<div class="navline__inner">
-					<ul>
+			<div class="navline" style="--anim-delay: .3s;">
+				<div class="navline__inner anim-parent">
+					<ul class="navline__list">
 						<li class="anim-appear"><a href="#" class="active link">ВСЕ</a></li>
 						<li class="anim-appear"><a href="#" class="link">новости</a></li>
 						<li class="anim-appear"><a href="#" class="link">СОБЫТИЯ</a></li>
 						<li class="anim-appear"><a href="#" class="link">ПУБЛИКАЦИИ</a></li>
 
-						<li class="navline__more anim-appear"><a href="#" class="link">Еще</a></li>
+						<li class="navline__more anim-appear">
+							<a href="#" class="link">Еще</a>
+							<ul class="navline__more_list list-vert"></ul>
+						</li>
 					</ul>
 				</div>
 			</div>
 
-			<div class="news__cont row anim-parent">
+			<div class="news__cont row anim-parent" style="--anim-delay: .4s;">
 				
 				<div class="news__outer anim-appear col-12 col-md-6 col-lg-4">
 					@@include('__item-news.html', {

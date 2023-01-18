@@ -62,6 +62,11 @@ $w-xxlg: $point-xxlg * 1px;
 
 	--btn-arrow-transition: transform .6s cubic-bezier(0.38, 0.005, 0.215, 1), opacity .6s cubic-bezier(0.38, 0.005, 0.215, 1);
 
+	--dark-trans-timefunc: .5s var(--ease-out);
+
+	--color-main: #000;
+	--color-hover: var(--purple);
+
 	@include media($w-sm) {
   	// --fz: .20021vw;
   }
@@ -109,10 +114,41 @@ body{
 	line-height: 1;
 	overflow-x: hidden;
 	position: relative;
-	color: #000;
+	color: var(--color-main);
 	background: #fff;
+	transition: color var(--dark-trans-timefunc), background var(--dark-trans-timefunc);
 	
 	// &::-webkit-scrollbar { width: 0; }
+
+
+	&.dark{
+		@extend .dark-mode;
+	}
+
+	&.dark-mode,
+	section.dark{
+		--color-main: #fff;
+		background: var(--black);
+		.gray-section,
+		&.gray-section{
+			background: var(--black);
+		}
+		.light-section,
+		&.light-section{
+			.nav__item{
+				@extend .nav__item-dark;
+			}
+			.btn-more{
+				@extend .btn-white;
+				@extend .btn-trans;
+			}
+		}
+
+	}
+
+	&:not(.is-scrollable) {
+		// overflow: visible;
+	}
 
 	&.is-loaded{
 		.preloader{
@@ -120,6 +156,9 @@ body{
 			visibility: hidden;
 		}
 	}
+}
+.light-section{
+	transition: color var(--dark-trans-timefunc), background var(--dark-trans-timefunc);
 }
 input,
 button,
@@ -282,5 +321,47 @@ section{
 	&.pfl-lazy{
 		opacity: 0;
 		transform: scale(1.15);
+	}
+}
+
+
+.marquee {
+	display:flex;
+	flex-wrap: nowrap;
+	white-space: nowrap;
+	min-width: 100%;
+	overflow:hidden;
+	z-index: 15;
+
+	li{
+		padding: 0;
+		flex-shrink: 0;
+		list-style-type: none;
+		&:after {
+			content: '—';
+			padding: 0 1vw;
+		}
+	}
+
+	&__inner{
+		position: relative;
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		animation: slide-left 33000ms linear infinite;
+		overflow: hidden;
+		padding: 0;
+		margin: 0;
+	}
+
+}
+@keyframes slide-left {
+	from {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	to {
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
 	}
 }

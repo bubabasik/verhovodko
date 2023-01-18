@@ -5,12 +5,31 @@
 		}
 	}
 }
+.dark__mode{
+	.section_team{
+		.team__exp{
+			color: var(--text_gray_light);
+		}
+	}
+}
 .section_team{
-	background: #313131;
-	color: #fff;
+	// background: #313131;
+	// color: #fff;
+	// background: var(--back);
 	padding-top: v(97);
 	padding-bottom: v(101);
 	overflow: hidden;
+
+	// transition: color var(--dark-trans-timefunc), background var(--dark-trans-timefunc);
+
+	&.dark{
+		color: var(--color-main);
+
+		.team__exp{
+			color: var(--text_gray_light);
+		}
+	}
+
 
 	.more{
 		margin-top: v(42);
@@ -87,7 +106,7 @@
 .team__name{
 	font-size: v(20);
 	letter-spacing: -0.02em;
-	color: #fff;
+	color: var(--color-main);
 	margin-top: v(15);
 
 	@include media($w-xl) {
@@ -97,7 +116,7 @@
 }
 .team__exp{
 	font-size: v(16);
-	color: $text_gray_light;
+	color: var(--text_gray);
 	margin-top: v(5);
 
 	@include media($w-xl) {

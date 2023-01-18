@@ -36,6 +36,7 @@
 	color: #fff;
 	min-height: 100vh;
 	padding-bottom: v(80);
+	overflow: hidden;
 
 	.head__logo{
 		transition: transform .6s cubic-bezier(0.4, 0, 0, 1),opacity .6s cubic-bezier(0.4, 0, 0, 1);
@@ -78,26 +79,65 @@
 		padding-bottom: v(83);
 	}
 }
-.top__bg{
-	display: inline-block;
-	vertical-align: top;
+.top__over{
+	--zin: 999;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+	z-index: var(--zin);
+	pointer-events: none;
+	opacity: 0;
+	visibility: visible!important;
+	&:before{
+		content: '';
+		display: inline-block;
+		position: absolute;
+		top: -10%;
+		left: -10%;
+		width: 120%;
+		height: 120%;
+		background: #000;
+	}
+}
+.top__bg{
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	top: v(-59);
+	width: calc(100% + #{v(272)} + #{v(271)});
+	height: calc(100% + #{v(59)} * 2);
 	z-index: -1;
 	object-fit: cover;
 	transition: transform 5s cubic-bezier(0.04, 1.15, 0.4, 0.99);
 	will-change: transform;
 	transform: scale(1.35);
 
+	&-outer{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		will-change: transform;
+	}
+
 }
 .top__container{
 	flex: auto;
 	display: flex;
 	flex-flow: column;
-	justify-content: center;
+
+	&-in{
+		flex: auto;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		will-change: transform;
+	}
+
 	.title{
 		display: flex;
 		align-items: center;
@@ -119,6 +159,7 @@
 	}
 }
 .top__title{
+	will-change: transform;
 	.unwrap{
 		display: inline-flex;
 		overflow: hidden;

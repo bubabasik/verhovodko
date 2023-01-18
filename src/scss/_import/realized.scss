@@ -1,3 +1,11 @@
+.dark-mode{
+	.realized__title{
+		color: var(--text_gray_light);
+	}
+	.realized__text{
+		color: var(--text_gray_light);
+	}
+}
 .realized__cont{
 
 }
@@ -65,7 +73,7 @@
 }
 .realized__name{
 	font-size: v(20);
-	color: #000;
+	color: var(--color-main);
 	transition: .3s ease-in-out;
 	letter-spacing: -0.02em;
 

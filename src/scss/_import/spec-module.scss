@@ -1,3 +1,11 @@
+.dark-mode{
+	.section_modspec{
+		.modspec__tab{
+			--tab-active: #fff;
+			--link-color: var(--purple);
+		}
+	}
+}
 .section_modspec{
 	position: relative;
 	z-index: 10;
@@ -10,10 +18,33 @@
 	}
 }
 .modspec__cont{
+	--pos-top: -20;
+	--pos-left: -120;
+	--pos-bottom: -140;
+	--width: 350;
 	position: relative;
 
+	&:before{
+		content: '';
+		display: none;
+		vertical-align: top;
+		position: absolute;
+		width: calc(var(--width) * var(--fz));
+		top: calc(var(--pos-top) * var(--fz));
+		left: calc(var(--pos-left) * var(--fz));
+		bottom: calc(var(--pos-bottom) * var(--fz));
+		background: var(--back);
+	}
+
 	@include media($w-lg) {
+		--pos-top: -73;
+		--pos-left: -160;
+		--pos-bottom: -226;
+		--width: 600;
 		padding-left: v(280);
+		&:before{
+			display: inline-block;
+		}
 	}
 	@include media($w-xl) {
 		padding-left: v(560);
@@ -34,15 +65,17 @@
 	}
 }
 .modspec__tab{
+	--tab-color: var(--text_gray_light);
+	--tab-active: #000;
 	font-family: $font_title;
-	color: $text_gray_light;
+	color: var(--tab-color);
 	line-height: 1.2;
 	font-size: v(34);
 	padding-bottom: v(13);
 
 	&:hover,
 	&.active{
-		color: #000;
+		color: var(--tab-active);
 		background-size: 0% 1px;
 		background-position: 0 100%;
 	}
@@ -86,10 +119,11 @@
 	font-size: v(16);
 	line-height: 1.35;
 	text-decoration: none !important;
-	color: #000;
+	color: var(--color-main);
 	z-index: 1;
 
 	&.hover{
+		color: var(--color-hover);
 		z-index: 5;
 		span{
 			opacity: 1;
@@ -108,9 +142,6 @@
 		display: none;
 		vertical-align: top;
 		position: absolute;
-		top: -73px;
-		left: -160px;
-		bottom: -226px;
 		background-size: cover;
 		background-position: center center;
 		opacity: 0;
@@ -131,27 +162,20 @@
 			transform: scale(1.25);
 		}
 	}
-	&:hover{
-		color: $purple;
-	}
 
 	@include media($w-lg) {
 		span{
 			display: inline-block;
-			width: v(350);
-			top: v(-20);
-			left: v(-120);
-			bottom: v(-140);
+			width: calc(var(--width) * var(--fz));
+			top: calc(var(--pos-top) * var(--fz));
+			left: calc(var(--pos-left) * var(--fz));
+			bottom: calc(var(--pos-bottom) * var(--fz));
 		}
 	}
 	@include media($w-xl) {
 		font-size: v(26);
 		span{
-			width: v(600);
 			// height: v(978);
-			top: v(-73);
-			left: v(-160);
-			bottom: v(-226);
 		}
 	}
 }

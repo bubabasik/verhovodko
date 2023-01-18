@@ -73,7 +73,7 @@
 		}
 	}
 	@include media($w-xl) {
-		flex: 0 0 calc(100% / 6 - #{v(25)} / 2);
+		flex: 0 0 calc(100vw / 6 - #{v(25)} / 2);
 		margin-bottom: v(25);
 		margin-right: v(25);
 		img{

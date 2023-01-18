@@ -14,10 +14,11 @@
 }
 
 .link{
+	--link-color: currentColor;
 	--link-transition: background-size .3s var(--ease-out), background-position .3s var(--ease-out), color .2s var(--ease-out), opacity .3s var(--ease-out);
 	text-decoration: none !important;
 
-	background-image: linear-gradient(currentColor,currentColor);
+	background-image: linear-gradient(var(--link-color),var(--link-color));
 	background-position: 0% 100%;
 	background-size: 0 1px;
 	background-repeat: no-repeat;

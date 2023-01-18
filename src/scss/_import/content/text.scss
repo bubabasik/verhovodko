@@ -1,4 +1,17 @@
-
+.dark-mode{
+	.textinfo{
+		&__name{
+			color: var(--text_gray_light);
+		}
+	}
+	.text{
+		blockquote{
+			&:before{
+				opacity: 0.15;
+			}
+		}
+	}
+}
 .text{
 	--text-margin: calc(10 * var(--fz));
 	--h1-margin-top: calc(29 * var(--fz));
@@ -6,6 +19,7 @@
 	$text_margin: v(10);
 	font-size: v(16);
 	line-height: 1.35;
+	color: var(--color-main);
 	& > * {
 		margin-bottom: 0;
 		&:last-child{

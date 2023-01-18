@@ -1,3 +1,4 @@
+
 .section_project{
 	padding-bottom: v(100);
 
@@ -39,10 +40,21 @@
 	img{
 		height: v(32);
 	}
-	span{
+	& > span{
 		margin-left: v(20);
 	}
+	.ya-share2__icon{
+		width: v(32)!important;
+		height: v(32)!important;
+		background-size: v(20) v(20)!important;
+	}
 
+	@include media-max($w-md) {
+		.ya-share2__icon{
+			width: v(25)!important;
+			height: v(25)!important;
+		}
+	}
 	@include media($w-lg) {
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
@@ -62,6 +74,7 @@
 	border-bottom: 1px solid $line_gray_soft;
 	padding-top: v(21);
 	margin-bottom: v(31);
+	color: var(--color-main);
 	&_item{
 		margin-bottom: v(20);
 	}

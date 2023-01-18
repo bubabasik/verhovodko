@@ -96,12 +96,15 @@
 }
 
 .navline{
+	--anim-delay: 0s;
 	font-size: v(13);
 	line-height: 1.35;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	white-space: nowrap;
 	margin-top: v(-7);
+	position: relative;
+	z-index: 10;
 
 	&__inner{
 		display: flex;
@@ -109,24 +112,24 @@
 		padding: 0 v(20);
 	}
 
-	ul{
+	&__list{
 		display: flex;
 		list-style: none;
 		padding: 0;
 		margin: 0;
 		flex: auto;
-	}
-	li{
-		margin-right: v(20);
+		& > li{
+			margin-right: v(20);
 
-		@for $i from 1 through 20 {
-			&:nth-child(#{$i}) {
-				transition-delay: calc( ( #{$i} - 1 )  * .15s);
+			@for $i from 1 through 20 {
+				&:nth-child(#{$i}) {
+					transition-delay: calc( var(--anim-delay) +  ( #{$i} - 1 )  * .15s);
+				}
 			}
-		}
-		
-		&:last-child{
-			margin-right: 0 !important;
+
+			&:last-child{
+				margin-right: 0 !important;
+			}
 		}
 	}
 	a{
@@ -137,7 +140,7 @@
 		padding-bottom: v(8);
 		&:hover,
 		&.active{
-			color: #000;
+			color: var(--color-main);
 		}
 		&.active{
 			background-size: 100% 1px;
@@ -148,6 +151,58 @@
 		display: none;
 		margin-right: 0!important;
 		margin-left: auto;
+		position: relative;
+		&:hover{
+			.navline{
+				&__more_list{
+					opacity: 1;
+					visibility: visible;
+					transform: scaleY(1);
+					li{
+						transition: .5s ease;
+						transform: none;
+						opacity: 1;
+						@for $i from 0 through 20 {
+							&:nth-child(#{$i}) {
+								transition-delay: calc( #{$i}  * .1s + .2s);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&__more_list{
+		position: absolute;
+		top: 100%;
+		right: 0;
+		border: 1px solid var(--line_gray_soft);
+		background: #fff;
+		padding: v(20);
+		display: flex;
+		flex-flow: column;
+		opacity: 0;
+		visibility: hidden;
+		overflow: hidden;
+		transform: scaleY(0);
+		will-change: transform;
+		transform-origin: center 0;
+		transition: .3s ease-out;
+		max-width: 50vw;
+		li{
+			margin-bottom: v(10);
+			opacity: 0;
+			transform: translateY(-10px);
+			will-change: transform;
+			transition: 0s;
+		}
+		a{
+			background: transparent;
+			padding: 0;
+			&:hover{
+				color: var(--purple);
+			}
+		}
 	}
 
 	@include media-max($w-md) {
@@ -171,18 +226,24 @@
 			margin: 0;
 			padding: 0;
 		}
-		ul{
+		&__list{
 			border-bottom: 1px solid $line_gray_soft;
 		}
 	}
 	@include media($w-xl) {
 		font-size: v(20);
 		margin-top: v(39);
-		li{
-			margin-right: v(39);
+		&__list{
+			& > li{
+				margin-right: v(39);
+			}
 		}
 		a{
 			padding-bottom: v(15);
+		}
+		&__more_list{
+			max-width: v(520);
+			padding: v(40);
 		}
 	}
 }

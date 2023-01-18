@@ -1,3 +1,8 @@
+.dark-mode{
+	.info__item{
+		border-color: rgba(213, 217, 232, 0.15);
+	}
+}
 .section_info{
 	padding-top: v(97);
 	padding-bottom: v(100);
@@ -40,7 +45,7 @@
 	flex-flow: column;
 	border-top: 1px solid $line_gray_soft;
 	padding-top: v(20);
-	color: #000;
+	color: var(--color-main);
 
 	&:hover{
 		color: $text_purple;

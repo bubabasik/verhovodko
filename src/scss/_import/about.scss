@@ -1,3 +1,10 @@
+.dark-mode{
+	.about__bg{
+		img{
+			opacity: 0.10;
+		}
+	}
+}
 .section_about{
 	padding-bottom: v(60);
 	@include media-max($w-md) {
@@ -78,6 +85,7 @@
 		display: inline-flex;
 		align-items: center;
 		font-size: v(125);
+		color: var(--color-main);
 		span{
 			font-family: $font;
 			letter-spacing: -0.02em;

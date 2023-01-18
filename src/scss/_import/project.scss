@@ -1,3 +1,17 @@
+.dark-mode{
+	.light-section{
+		.prj__item{
+			background: rgba(255, 255, 255, 0.1);
+		}
+		.prj__title{
+			color: #fff;
+		}
+		.prj__text{
+			color: var(--text_gray_light);
+		}
+	}
+}
+
 .section_prj{
 	padding-bottom: v(100);
 	@include media($w-xl) {
@@ -5,11 +19,12 @@
 	}
 }
 .prj__row{
+	--anim-delay: 0s;
 	margin-top: v(40);
 	.prj__outer{
 		@for $i from 1 through 20 {
 			&:nth-child(#{$i}) {
-				transition-delay: calc( ( #{$i} - 1 )  * .1s);
+				transition-delay: calc( var(--anim-delay) + ( #{$i} - 1 )  * .1s);
 			}
 		}
 	}
@@ -50,6 +65,7 @@
 	width: 100%;
 	flex-flow: column;
 	text-decoration: none !important;
+	transition: background var(--dark-trans-timefunc);
 
 	&:hover{
 		.prj__title{

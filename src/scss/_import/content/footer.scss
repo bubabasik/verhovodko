@@ -1,6 +1,8 @@
 .footer{
+	--color-main: #000;
 	background: $back;
 	overflow: hidden;
+	color: var(--color-main);
 
 	&__in{
 		padding-top: v(97);

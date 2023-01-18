@@ -1,3 +1,7 @@
+document.addEventListener('mousemove', e => {
+	document.body.style.cssText = `--move-x: ${e.clientX}px; --move-y: ${e.clientY}px;`
+});
+
 $.fn.isVisible = function () {
 
 	let elementTop = $(this).offset().top;
@@ -90,7 +94,7 @@ $(function(){
 	$(window).on('load scroll resize', winScroll);
 
 	$('input[name="phone"]').inputmask({
-		mask: "+7 (999) 999-99-99",
+		mask: "+7 9{1,30}",
 		showMaskOnHover: false
 	});
 
@@ -161,8 +165,8 @@ $(function(){
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			dots: false,
-			prevArrow: '<button type="button" class="slick-prev btn-arrow-icon nav__item nav__item-dark nav__item-prev"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg></button>',
-			nextArrow: '<button type="button" class="slick-next btn-arrow-icon nav__item nav__item-dark nav__item-next"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></button>',
+			prevArrow: '<button type="button" class="slick-prev btn-arrow-icon nav__item  nav__item-prev"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg></button>',
+			nextArrow: '<button type="button" class="slick-next btn-arrow-icon nav__item  nav__item-next"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></button>',
 			responsive: [
 			{
 				breakpoint: 992,
@@ -193,8 +197,8 @@ $(function(){
 			dots: false,
 			fade: true,
 			cssEase: 'linear',
-			prevArrow: '<button type="button" class="slick-prev btn-arrow-icon nav__item nav__item-dark nav__item-prev"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg></button>',
-			nextArrow: '<button type="button" class="slick-next btn-arrow-icon nav__item nav__item-dark nav__item-next"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></button>',
+			prevArrow: '<button type="button" class="slick-prev btn-arrow-icon nav__item  nav__item-prev"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-left" /></svg></button>',
+			nextArrow: '<button type="button" class="slick-next btn-arrow-icon nav__item  nav__item-next"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg></button>',
 			responsive: [
 			{
 				breakpoint: 992,
@@ -226,7 +230,8 @@ $(function(){
 		});
 		$('.spec__item').on('mouseleave', function() {
 			var $self = $(this);
-			$('.spec__item').removeClass('hover unhover').addClass('unhover');
+			$('.spec__item').removeClass('hover unhover washover');
+			$self.addClass('washover');
 		});
 	}
 
@@ -261,6 +266,8 @@ $(function(){
 
 });
 
+
+
 function changeViewNav() {
 	var 
 	nav = [];
@@ -268,12 +275,14 @@ function changeViewNav() {
 	nav.cont = $('.navline'),
 	nav.list = $('.navline ul'),
 	nav.more = $('.navline__more'),
+	nav.more_list = $('.navline__more_list'),
 	nav.more_class = '.navline__more';
 
 	$(window).on('load resize', function(){
 
 		nav.list.find('li').not(nav.more_class).removeClass('d-none');
 		nav.more.hide();
+		nav.more_list.html();
 
 		if($(window).innerWidth() >= 768) {
 			if(nav.cont.outerWidth() < nav.list.outerWidth()) {
@@ -286,8 +295,21 @@ function changeViewNav() {
 
 	function hideLastNav() {
 		nav.list.find('li').not('.d-none').not(nav.more_class).last().addClass('d-none');
+		
 		if(nav.cont.outerWidth() < nav.list.outerWidth()) {
 			hideLastNav();
+		}else{
+			updateMoreList();
 		}
+		
+	}
+
+	function updateMoreList() {
+		nav.more_list
+		.html(nav.list.html())
+		.find('.navline__more').remove();
+
+		nav.more_list.find('li').not('.d-none').remove()
+		nav.more_list.find('li.d-none').removeClass('d-none anim-appear');
 	}
 }

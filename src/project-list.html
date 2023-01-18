@@ -11,7 +11,7 @@
 
 	@@include('_header.html')
 
-	<section class="section_prj">
+	<section class="section_prj light-section">
 		<div class="container">
 			<ul class="bread__list list-hor anim-item anim-appear">
 				<li>
@@ -22,9 +22,9 @@
 			<div class="content__title title title-xl title-appear">
 				<h1><span class="line_title">Реализованные проекты</span></h1>
 			</div>
-			<div class="navline">
+			<div class="navline" style="--anim-delay: .3s;">
 				<div class="navline__inner anim-parent">
-					<ul>
+					<ul class="navline__list">
 						<li class="anim-appear"><a href="#" class="active link">все проекты</a></li>
 						<li class="anim-appear"><a href="#" class="link">Строительство</a></li>
 						<li class="anim-appear"><a href="#" class="link">Энергетика и природные ресурсы</a></li>
@@ -34,11 +34,14 @@
 						<li class="anim-appear"><a href="#" class="link">Авиация 3</a></li>
 						<li class="anim-appear"><a href="#" class="link">Авиация 4</a></li>
 
-						<li class="navline__more anim-appear"><a href="#" class="link">Еще</a></li>
+						<li class="navline__more anim-appear">
+							<a href="#" class="link">Еще</a>
+							<ul class="navline__more_list list-vert"></ul>
+						</li>
 					</ul>
 				</div>
 			</div>
-			<div class="prj__row row anim-parent">
+			<div class="prj__row row anim-parent" style="--anim-delay: .3s;">
 				
 				<div class="prj__outer anim-appear col-12 col-md-6 col-lg-4">@@include('__prj-1.html')</div>
 				<div class="prj__outer anim-appear col-12 col-md-6 col-lg-4">@@include('__prj-2.html')</div>

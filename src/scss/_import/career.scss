@@ -27,6 +27,13 @@
 .career__aside{
 
 }
+.career__img{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+}
 .career__info{
 
 	@include media($w-xl) {

@@ -1,3 +1,8 @@
+.dark-mode{
+	.header{
+		background: #fff;
+	}
+}
 .fixed__logo{
 	position: fixed;
 	top: v(20);
@@ -105,6 +110,7 @@
 .header-light-outer{
 	.header{
 		@extend .header-light;
+		background: transparent!important;
 	}
 }
 .header{
@@ -117,6 +123,9 @@
 		border-bottom: none;
 		margin-bottom: 0;
 		padding-bottom: 0;
+		.header{
+			background: transparent;
+		}
 		.head__logo{
 			svg{
 				fill: #fff;
@@ -346,7 +355,7 @@
 				ul{
 					opacity: 1;
 					visibility: visible;
-					transition: .5s var(--ease);
+					transition: .5s ease-out;
 					transition-delay: .2s;
 				}
 			}
@@ -383,7 +392,7 @@
 		max-width: 100%;
 		max-height: 100%;
 		overflow: hidden;
-		transition: $hphone-trans-time var(--ease);
+		transition: $hphone-trans-time ease-out;
 		ul{
 			opacity: 0;
 			visibility: hidden;
@@ -391,7 +400,7 @@
 			display: flex;
 			flex-flow: column;
 			transition-delay: 0s;
-			transition: .5s var(--ease);
+			transition: .5s ease-out;
 		}
 		li{
 			display: flex;

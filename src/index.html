@@ -23,31 +23,37 @@
 	<div class="preloader"></div>
 	<div data-scroll-container>
 		<section class="section_top header-light-outer">
+			<div class="top__trigger"></div>
+			<div class="top__over"></div>
 			@@include('_header.html')
 
 			<div class="container top__container">
-				<div class="title title-md">
-					<h1 class="top__title">
-						<span class="line_title">
-							Основаны в 1991 году и находимся
-							в&nbsp;ТОП&nbsp;мировых рейтингов юридических компаний 
-						</span>
-					</h1>
+				<div class="top__container-in">
+					<div class="title title-md">
+						<h1 class="top__title">
+							<span class="line_title">
+								Основаны в 1991 году и находимся
+								в&nbsp;ТОП&nbsp;мировых рейтингов юридических компаний 
+							</span>
+						</h1>
+					</div>
+					<ul class="list-hor top__companies">
+						<li><a href="./about.html"><img src="./images/top-company-legal500.png" alt=""></a></li>
+						<li><a href="./about.html"><img src="./images/top-company-chambers.svg" alt=""></a></li>
+						<li><a href="./about.html"><img src="./images/top-company-pravo300.svg" alt=""></a></li>
+						<li><a href="./about.html"><img src="./images/top-company-legal500.png" alt=""></a></li>
+						<li><a href="./about.html"><img src="./images/top-company-chambers.svg" alt=""></a></li>
+					</ul>
 				</div>
-				<ul class="list-hor top__companies">
-					<li><a href="./about.html"><img src="./images/top-company-legal500.png" alt=""></a></li>
-					<li><a href="./about.html"><img src="./images/top-company-chambers.svg" alt=""></a></li>
-					<li><a href="./about.html"><img src="./images/top-company-pravo300.svg" alt=""></a></li>
-					<li><a href="./about.html"><img src="./images/top-company-legal500.png" alt=""></a></li>
-					<li><a href="./about.html"><img src="./images/top-company-chambers.svg" alt=""></a></li>
-				</ul>
 			</div>
 
-			<img src="./img/bg_top.jpg" alt="" class="top__bg" />
+			<div class="top__bg-outer">
+				<img src="./img/bg_top-xl.jpg" alt="" class="top__bg" />
+			</div>
 		</section>
 
 		<!-- PROJECTS -->
-		<section class="section_modprj">
+		<section class="section_modprj light-section gray-section">
 			<div class="container">
 				<div class="title title-appear">
 					<h2><span class="line_title">Наши проекты</span></h2>
@@ -70,6 +76,7 @@
 							<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
 							<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
 						</span>
+						<span class="btn-fill"></span>
 					</a>
 				</div>
 			</div>
@@ -77,7 +84,7 @@
 		<!-- # PROJECTS -->
 
 		<!-- SPECIALIZATION -->
-		<section class="section_modspec">
+		<section class="section_modspec light-section">
 			<div class="container">
 				
 				<div class="modspec__cont tabs anim-parent">
@@ -290,7 +297,7 @@
 		<!-- # SPECIALIZATION -->
 
 		<!-- TEAM -->
-		<section class="section_team">
+		<section class="section_team dark-mode-trigger-last light-section">
 			<div class="container">
 				<div class="title title-appear">
 					<h2>
@@ -350,12 +357,13 @@
 
 				</div>
 				<div class="more anim-item anim-appear">
-					<a href="./project-list.html" class="btn btn-more btn-arrow btn-trans btn-white">
+					<a href="./project-list.html" class="btn btn-more btn-arrow btn-white">
 						подробнее о нас
 						<span class="btn-more-icon btn-arrow-icon">
 							<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
 							<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
 						</span>
+						<span class="btn-fill"></span>
 					</a>
 				</div>
 
@@ -404,7 +412,7 @@
 		<!-- # TEAM -->
 
 		<!-- INFO -->
-		<section class="section_info">
+		<section class="section_info light-section">
 			<div class="container">
 				<div class="title title-appear">
 					<h2><span class="line_title">Инфо-центр</span></h2>
@@ -433,6 +441,7 @@
 							<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
 							<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
 						</span>
+						<span class="btn-fill"></span>
 					</a>
 				</div>
 			</div>

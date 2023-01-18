@@ -1,3 +1,13 @@
+.dark-mode{
+	.teamrev{
+		&__dots{
+			color: rgba(#fff, .5);
+		}
+		&__quote{
+			opacity: 0.1;
+		}
+	}
+}
 .teamrev{
 	position: relative;
 	margin-top: v(100);
@@ -21,18 +31,18 @@
 		font-size: v(13);
 		line-height: 1.35;
 		letter-spacing: 0.1em;
-		color: rgba(#fff, .5);
+		color: var(--text_gray_light);
 		right: 0;
 		top: v(80);
 		span{
-			color: #fff;
+			color: var(--color-main);
 		}
 	}
 	&__quote{
 		position: absolute;
 		width: v(60);
 		height: v(50);
-		fill: rgba(#fff, .1);
+		fill: #fff;
 		z-index: -1;
 		left: 0;
 	}
@@ -46,6 +56,7 @@
 		font-size: v(22);
 		text-indent: v(20);
 		font-family: $font_title;
+		color: var(--color-main);
 	}
 	&__sub{
 		font-size: v(13);

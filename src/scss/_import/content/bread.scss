@@ -38,6 +38,10 @@
 		color: $text_gray;
 		display: inline-flex;
 		align-items: center;
+		background: none;
+		&:hover{
+			color: var(--purple);
+		}
 	}
 	svg{
 		margin-left: v(2);

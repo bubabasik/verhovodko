@@ -1,3 +1,15 @@
+
+$(window).on('load', function(){
+	$('body').addClass('is-loaded');
+	if($('.top__bg').length) {
+		setTimeout(function(){
+			$('body').addClass('is-scrollable');
+		}, 2200);
+	}else{
+		$('body').addClass('is-scrollable');
+	}
+})
+
 $(function(){
 
 	const body = document.querySelector('body');
@@ -86,9 +98,6 @@ $(function(){
 		$('.unwrap').unwrap();	
 	});
 
-	$(window).on('load', function(){
-		$('body').addClass('is-loaded');
-	})
 
 	$(function(titleAppear){    // ПОЯВЛЕНИЕ ЗАГОЛОВКОВ
 		const title = gsap.utils.toArray('.title-appear, .text-appear, .anim-item, .anim-parent');
@@ -115,24 +124,126 @@ $(function(){
 	// 	smooth: true
 	// });
 
+	var windowWidth = $(window).width();
 
-	$(function(footerAnimTop){// ФУТЕР
-		gsap.set('.footer__in', { yPercent: -50 })
+	if(windowWidth > 1200){
+		$(function(footerAnimTop){
+			gsap.set('.footer__in', { yPercent: -50 })
 
-		const uncover = gsap.timeline({ paused:true })
-		uncover
-		.to('.footer__in', { yPercent: 0 });
+			const uncover = gsap.timeline({ paused:true })
+			uncover
+			.to('.footer__in', { yPercent: 0, ease: 'none' });
 
-		ScrollTrigger.create({  
-			trigger: '.footer__trigger',
-			start: 'bottom bottom',
-			end: '+=100%',
-			animation: uncover,
-			scrub: 0
-		}); 
+			ScrollTrigger.create({  
+				trigger: '.footer__trigger',
+				start: 'bottom bottom',
+				end: '+=100%',
+				animation: uncover,
+				scrub: 0
+			}); 
+		});
+	}
 
 
+	if(windowWidth > 1200){
+		$(function(headerExp1){
+
+			gsap.set('.top__container-in', { yPercent: 0 })
+			gsap.set('.top__bg-outer', { yPercent: 0, scale: 1 })
+			gsap.set('.top__over', { autoAlpha: 0 })
+
+			const fullAnim = gsap.timeline({ paused:true });
+			fullAnim
+			.to('.top__over', { autoAlpha: .5, ease: 'none' })
+			.to('.top__bg-outer', { yPercent: 30, scale: 1.1, ease: 'none' }, '<')
+			.to('.top__container-in', { yPercent: 70, ease: 'none' }, '<');
+
+
+			ScrollTrigger.create({  
+				trigger: '.top__trigger',
+				start: 'top top',
+				end: '+=100%',
+				animation: fullAnim,
+				scrub: 0
+			}); 
+
+
+		});
+	}
+
+
+	$(function(darkMode){
+		const darks = gsap.utils.toArray('.dark-mode-trigger, .dark-mode-trigger-last');
+
+		darks.forEach((box, i) => {
+			let end_trigger, end_position;
+			if($(box).hasClass('dark-mode-trigger-last')) {
+				end_trigger = 'html';
+				end_position = 'bottom top';
+			}else{
+				end_trigger = box;
+				end_position = "bottom bottom-=30%";
+			}
+			
+			ScrollTrigger.create({
+				trigger: box,
+				endTrigger: end_trigger,
+				start: "top+=10% bottom-=10%",
+				end: end_position,
+				onToggle: self => {
+					if(self.isActive) {
+						$('body').addClass('dark-mode');
+					}else{
+						$('body').removeClass('dark-mode');
+					}
+				},
+			});
+		});
 	});
+
+
+	$(function(runText){ 
+		if($('.marquee').length) {
+
+			$(window).on("load resize scroll", function() {
+				$(".marquee").each(function() {
+					var windowTop = $(window).scrollTop();
+					var elementTop = $(this).offset().top;
+					var leftPosition = windowTop * 1600 / elementTop;
+					$(this)
+					.find(".marquee__inner")
+					.css({ right: leftPosition });
+				});  
+			}); 
+		}
+	});
+
+
+
+	$(function(button){
+		gsap.set('.btn-fill', { y: "76%" })
+
+		$('.btn').on('mouseenter', function() {
+			if($(this).find(".btn-fill").length) {
+				gsap.to($(this).find(".btn-fill"), .45, {
+					startAt: {y: "-76%"},
+					y: "0%",
+					ease: Power2.easeInOut
+				});
+			}
+			$(this.parentNode).removeClass('not-active');
+		});
+
+		$('.btn').on('mouseleave', function() {
+			if($(this).find(".btn-fill").length) {
+				gsap.to($(this).find(".btn-fill"), .45, {
+					y: "76%",
+					ease: Power2.easeInOut
+				});
+			}
+			$(this.parentNode).removeClass('not-active');
+		});
+	}) 
 
 
 

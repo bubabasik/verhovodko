@@ -5,6 +5,7 @@
 	}
 }
 .news__cont{
+	--anim-delay: 0s;
 	margin-top: v(40);
 	.pagination{
 		margin-top: 0;
@@ -12,7 +13,7 @@
 	.news__outer{
 		@for $i from 1 through 20 {
 			&:nth-child(#{$i}) {
-				transition-delay: calc( ( #{$i} - 1 )  * .1s);
+				transition-delay: calc( var(--anim-delay) + ( #{$i} - 1 )  * .1s);
 			}
 		}
 	}
@@ -47,7 +48,7 @@
 .news__item{
 	line-height: 1.35;
 	text-decoration: none !important;
-	color: #000;
+	color: var(--color-main);
 	display: flex;
 	flex-flow: column;
 
