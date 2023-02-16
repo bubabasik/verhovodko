@@ -245,7 +245,29 @@ $(function(){
 		});
 	}) 
 
-
+	if($('.nf__icon-double').length) {
+		$(function () {
+			$('body').mouseleave(function(e){
+				gsap.to('.nf__icon-double', 0.5,{x: 0, y: 0});
+			});
+			$('body').mousemove(function(e){   
+				callParallax(e);
+			});
+			function callParallax(e){
+				parallaxIt(e, '.nf__icon-double', 25);
+			}
+			function parallaxIt(e, target, movement){
+				var $this = $('body');
+				var relX = e.pageX - $this.offset().left;
+				var relY = e.pageY - $this.offset().top;
+				gsap.to(target, 0.5, {
+					x: (relX - $this.width()/2) / ($this.width()) * movement,
+					y: (relY - $this.height()/2) / ($this.height()) * movement,
+					ease: Power2.easeOut 
+				});
+			}
+		});
+	}
 
 
 });
@@ -257,7 +279,7 @@ $(function(){
 		if (!isSafari) { 
 			SmoothScroll ({ 
 				animationTime: 800, 
-				stepSize: 50, 
+				stepSize: 70, 
 				accelerationDelta: 150, 
 				accelerationMax: 10, 
 				keyboardSupport: true, 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('_meta.html')
+
+</head>
+<body>
+
+	@@include('_header.html')
+
+	<section class="section_psearch">
+		<div class="container">
+			<ul class="bread__list list-hor anim-item anim-appear">
+				<li>
+					<a href="./index.html" class="link">Главная</a>
+					<svg class="ico"><use xlink:href="./img/sprite.svg#bread-left" /></svg>
+				</li>
+			</ul>
+			<div class="content__title title title-xl title-appear">
+				<h1><span class="line_title">Результаты поиска</span></h1>
+			</div>
+
+			<div class="psearch__form anim-item anim-appear dl-3">
+				<form action="#" class="search__form">
+					<div class="search__inp">
+						<input type="text" name="search" class="search__input" placeholder="Введите ваш запрос" value="Юридических" >
+						<button type="submit" class="btn btn-scale search__submit">
+							<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+						</button>
+					</div>
+					<div class="search__sub">
+						найдено резульатов: 130
+					</div>
+				</form>
+			</div>
+
+			<div class="psearch__result anim-parent" style="--anim-delay: .4s;">
+				
+				<a href="./project-item.html" class="psearch__item  anim-appear">
+					<span class="psearch__item-pre">проект</span>
+					<span class="psearch__item-name">Юридическая фирма «Верховодко и партнеры» традиционно находится в числе лидеров на рынке юридических услуг по результатам рейтинга The Legal 500 за 2022</span>
+					<span class="psearch__item-text">Команда сопроводила сделку по привлечению инвестиций от инвестиционного фонда Zubr Capital Fund в Realt.by – популярный информационно-аналитический ресурс в сфере недвижимости.</span>
+				</a>
+				
+				<a href="./article.html" class="psearch__item  anim-appear">
+					<span class="psearch__item-pre">инфо-центр</span>
+					<span class="psearch__item-name">Консультация юриста по семейным делам</span>
+					<span class="psearch__item-text">Команда сопроводила сделку по привлечению юристов от инвестиционного фонда Zubr Capital Fund в Realt.by – популярный информационно-аналитический ресурс в сфере недвижимости.</span>
+				</a>
+				
+				<a href="./career.html" class="psearch__item  anim-appear">
+					<span class="psearch__item-pre">карьера</span>
+					<span class="psearch__item-name">Юридическая фирма «Верховодко и партнеры» традиционно находится в числе лидеров на рынке юридических услуг по результатам рейтинга The Legal 500 за 2022</span>
+					<span class="psearch__item-text">Также в ходе проекта мы проконсультировали клиента по вопросам структуры сделки и ее <span>юридического</span> оформления.</span>
+				</a>
+				
+				<a href="./article.html" class="psearch__item  anim-appear">
+					<span class="psearch__item-pre">события</span>
+					<span class="psearch__item-name">Верховодко и партнеры» находится в числе ведущих <span>юридических</span> фирм </span>
+				</a>
+				
+				<a href="./career.html" class="psearch__item  anim-appear">
+					<span class="psearch__item-pre">карьера</span>
+					<span class="psearch__item-name">По результатам исследования IFLR 1000 2021 года «Верховодко и партнеры» занимает позиции</span>
+					<span class="psearch__item-text">Юридическая фирма «Верховодко и партнеры» оказывает широкий комплекс услуг в области оформления прав на интеллектуальную собственность</span>
+				</a>
+
+				<div class="pagination anim-item anim-appear">
+					<ul class="pagination__list">
+						<li><a href="#">1</a></li>
+						<li class="pagination__dev"></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">6</a></li>
+						<li class="active"><span>7</span></li>
+						<li><a href="#">8</a></li>
+						<li><a href="#">9</a></li>
+						<li class="pagination__dev"></li>
+						<li><a href="#">33</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+	</section>	
+
+	@@include('_footer.html')
+
+</body>
+</html>

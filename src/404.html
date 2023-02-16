@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('_meta.html')
+
+</head>
+<body>
+
+	<section class="section_nf">
+		@@include('_header.html')
+
+		<div class="nf__cont">
+			<div class="container">
+				
+				<div class="nf__inner">
+					
+					<div class="nf__data">
+						<div class="title title-xl">
+							<h1>
+								Страница <br>
+								не&nbsp;найдена
+							</h1>
+						</div>
+						<div class="nf__text">
+							Страница, которую вы запрашиваете не существует. Возможно она устарела, была удалена или был введен неверный адрес в адресной строке.
+						</div>
+						<div class="nf__button">
+							<a href="./" class="btn btn-circle btn-circle-light btn-arrow form__submit" type="submit">
+								<span class="btn-icon btn-arrow-icon">
+									<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+									<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+								</span>
+								вернуться на главную
+							</a>
+						</div>
+					</div>
+
+					<div class="nf__img">
+						<div class="nf__icon">
+							<svg class="ico"><use xlink:href="./img/sprite.svg#404" /></svg>
+							<svg class="ico nf__icon-double"><use xlink:href="./img/sprite.svg#404" /></svg>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		@@include('_footer.html')
+	</section>
+
+
+
+</body>
+</html>

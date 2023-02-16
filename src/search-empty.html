@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('_meta.html')
+
+</head>
+<body>
+
+	@@include('_header.html')
+
+	<section class="section_psearch">
+		<div class="container">
+			<ul class="bread__list list-hor anim-item anim-appear">
+				<li>
+					<a href="./index.html" class="link">Главная</a>
+					<svg class="ico"><use xlink:href="./img/sprite.svg#bread-left" /></svg>
+				</li>
+			</ul>
+			<div class="content__title title title-xl title-appear">
+				<h1><span class="line_title">Результаты поиска</span></h1>
+			</div>
+
+			<div class="psearch__form anim-item anim-appear dl-3">
+				<form action="#" class="search__form">
+					<div class="search__inp">
+						<input type="text" name="search" class="search__input" placeholder="Введите ваш запрос" value="Проекты" >
+						<button type="submit" class="btn btn-scale search__submit">
+							<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arrow-right" /></svg>
+						</button>
+					</div>
+					<div class="search__sub">
+						найдено резульатов: 130
+					</div>
+				</form>
+			</div>
+
+			<div class="psearch__result anim-parent" style="--anim-delay: .4s;">
+				
+				<div class="psearch__empty anim-appear dl-0">
+					К сожалению, <br class="d-md-none">мы ничего не нашли.
+					<br>Попробуйте изменить запрос.
+				</div>
+
+			</div>
+
+		</div>
+	</section>	
+
+	@@include('_footer.html')
+
+</body>
+</html>

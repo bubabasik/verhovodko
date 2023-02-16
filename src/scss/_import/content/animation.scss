@@ -17,9 +17,42 @@
 	}
 }
 .dl{
-	@for $i from 0 through 40 {
+	@for $i from 0 through 20 {
 		&-#{$i} {
 			transition-delay: calc( #{$i}  * .1s + var(--anim-delay))!important;
 		}
 	}
+
+	@include media($w-sm) {
+		@for $i from 0 through 20 {
+			&-sm-#{$i} {
+				transition-delay: calc( #{$i}  * .1s + var(--anim-delay))!important;
+			}
+		}
+	}
+
+	@include media($w-md) {
+		@for $i from 0 through 20 {
+			&-md-#{$i} {
+				transition-delay: calc( #{$i}  * .1s + var(--anim-delay))!important;
+			}
+		}
+	}
+
+	@include media($w-lg) {
+		@for $i from 0 through 20 {
+			&-lg-#{$i} {
+				transition-delay: calc( #{$i}  * .1s + var(--anim-delay))!important;
+			}
+		}
+	}
+
+	@include media($w-xl) {
+		@for $i from 0 through 20 {
+			&-xl-#{$i} {
+				transition-delay: calc( #{$i}  * .1s + var(--anim-delay))!important;
+			}
+		}
+	}
+	
 }

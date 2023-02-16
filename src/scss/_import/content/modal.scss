@@ -43,6 +43,7 @@
 	opacity: 1!important;
 	width: 100%;
 	background: $back;
+	color: #000;
 	padding: v(97) v(40);
 
 	&-dark{
@@ -193,85 +194,6 @@
 		&_item{
 			a{
 				margin-top: v(10);
-			}
-		}
-	}
-}
-
-.search{
-	&__modal{
-		max-width: 100%;
-		min-height: 0;
-		background: #fff;
-	}
-	&__form{}
-	&__inp{
-		display: flex;
-		align-items: flex-start;
-	}
-	&__input{
-		font-family: $font_title;
-		flex: auto;
-		border: none;
-		border-bottom: 1px solid $line_gray_soft;
-		background: transparent;
-		color: #000;
-		font-size: v(28);
-
-		@include placeholder {
-			font-family: $font_title;
-			color: #000;
-		}
-	}
-	&__submit{
-		padding: 0;
-		color: $line_gray_dark;
-		min-width: v(36);
-		&:hover{
-			color: #fff;
-		}
-		svg{
-			fill: currentColor;
-			width: v(16);
-			height: v(13);
-		}
-	}
-	&__sub{
-		color: $text_gray;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		line-height: 1.35;
-	}
-
-	@include media($w-xl) {
-		&__modal{
-			padding-top: v(99);
-			padding-bottom: v(102);
-			.container{
-				max-width: v(1310);
-			}
-			&__form{
-				width: 100%;
-				max-width: v(1010);
-				float: right;
-			}
-		}
-		&__input{
-			height: v(83);
-			padding-bottom: v(31);
-			font-size: v(46);
-			margin-top: v(9);
-		}
-		&__sub{
-			font-size: v(20);
-			margin-top: v(20);
-		}
-		&__submit{
-			margin-left: v(50);
-			min-width: v(80);
-			svg{
-				width: v(22);
-				height: v(19);
 			}
 		}
 	}
