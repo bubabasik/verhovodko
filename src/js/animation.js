@@ -272,6 +272,7 @@ $(function(){
 
 });
 
+
 (function() { 
 	let isSafari = (function() { 
 		let ua = navigator.userAgent; 
@@ -279,7 +280,7 @@ $(function(){
 		if (!isSafari) { 
 			SmoothScroll ({ 
 				animationTime: 800, 
-				stepSize: 70, 
+				stepSize: 170, 
 				accelerationDelta: 150, 
 				accelerationMax: 10, 
 				keyboardSupport: true, 

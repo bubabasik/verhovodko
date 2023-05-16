@@ -212,6 +212,7 @@
 	svg{
 		width: v(160);
 		height: v(25);
+		fill: #640035;
 	}
 	@include media($w-md) {
 		padding-top: 0;
